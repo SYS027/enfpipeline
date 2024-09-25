@@ -1,0 +1,407 @@
+﻿@{
+    ViewBag.Title = "Form5Rpt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using EDF.Web.DataAccessLayer
+
+<!-- Datatable script -->
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+<script src="~/Assets/bootstrap-select.min.js"></script>
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+
+<style>
+    .dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover {
+        background-color: #0d6efd;
+    }
+
+    .bootstrap-select > .dropdown-toggle {
+        border: 1px solid #ccc;
+    }
+
+    .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+        color: #555;
+    }
+
+    .bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+        background-color: white;
+    }
+</style>
+<header><h4><b>Form 5 Report</b></h4></header>
+<hr>
+<div class="row m-0">
+    <div class="row">
+        <div class="col-md-3 mt-3">
+            <label for="">From Date</label>
+            <input type="date" id="fromDate" class="form-control">
+        </div>
+        <div class="col-md-3 mt-3">
+            <label for="">To Date</label>
+            <input type="date" id="toDate" class="form-control">
+        </div>
+        <div class="col-md-3 mt-3">
+            <label for="">Submisssion Period</label>
+            <select id="search_period_flag" class="form-select">
+                <option value="">Select</option>
+                @foreach (var item in ViewBag.lstperiodflagfor5)
+                {
+                    <option value="@item.period_flag"> @item.period_flag</option>
+                }
+
+            </select>
+            @*<select id="search_period_flag" class="form-control">
+                    <option value="">Select</option>
+                    <option value="DOJ">Date of Joining</option>
+                    <option value="1HY">1 half yearly</option>
+                    <option value="2HY">2 half yearly</option>
+                </select>*@
+
+
+        </div>
+
+        <div class="col-md-3 mt-3">
+            <label for="employeeCodeSearch">Employee</label>
+
+            <select class="selectpicker form-control" data-live-search="true" id="employeeCodeSearch">
+                <option value="">Select</option>
+                @foreach (var item in ViewBag.EmpName)
+                {
+                    <option value="@item.employeecode">@item.employeename, @item.employeecode</option>
+                }
+            </select>
+
+            @*<input type="text" id="employeeCodeSearch" class="form-control" list="employeeCodes">
+
+                <datalist id="employeeCodes">
+                    <option value="">Select</option>
+                    @foreach (var item in ViewBag.EmpName)
+                    {
+                        <option value="@item.employeecode">@item.employeename</option>
+                    }
+                </datalist>*@
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-md-3 mt-3">
+            <label for="">Designation</label>
+            <select id="designationSearch" class="form-select">
+                <option value="">Select</option>
+                @foreach (var item in ViewBag.designation)
+                {
+                    <option value="@item.attribute_type_unit_desc"> @item.attribute_type_unit_desc</option>
+                }
+
+            </select>
+
+        </div>
+        <div class="col-md-3 mt-3">
+            <label for="">Band</label>
+            <select id="bandSearch" class="form-select">
+                <option value="">Select</option>
+                @foreach (var item in ViewBag.band)
+                {
+                    <option value="@item.attribute_type_unit_desc"> @item.attribute_type_unit_desc</option>
+                }
+
+            </select>
+        </div>
+        <div class="col-md-3 mt-3">
+            <label for="">Department</label>
+            <select id="departmentSearch" class="form-select">
+                <option value="">Select</option>
+                @foreach (var item in ViewBag.department)
+                {
+                    <option value="@item.attribute_type_unit_desc"> @item.attribute_type_unit_desc</option>
+                }
+
+            </select>
+
+        </div>
+
+        <div class="col-md-3 mt-3">
+            <label for="">Status</label>
+            <select id="applicableSearch" class="form-select">
+                <option value="">Select</option>
+                @*@foreach (var item in ViewBag.lstnotapplicable)
+                    {
+                        <option value="@item.not_applicable"> @item.not_applicable</option>
+                    }*@
+
+
+                @foreach (var item in ViewBag.lstnotapplicable)
+                {
+                    <option value="@item.not_applicable">
+                        @if (item.not_applicable == true)
+                        {
+                            @Html.Raw("Not Applicable")
+                        }
+                        else
+                        {
+                            @Html.Raw("Not Submitted")
+                        }
+                    </option>
+                }
+            </select>
+            @*<select id="applicableSearch" class="form-control">
+                    <option value="">Select</option>
+                    <option value="true">Not Applicable</option>
+                    <option value="false">Submitted</option>
+                </select>*@
+
+
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-md-12 mt-3" style="text-align:right;">
+            <button class="btn btn-primary" id="btnSearch">Search</button>
+            <button class="btn btn-secondary" id="btnClear">Clear</button>
+            <button class="btn btn-success" id="btnExportExcel" onclick="exportfn()">Export to Excel</button>
+        </div>
+        @*<div class="col-md-1 mt-auto">
+                <button class="btn btn-secondary btn-sm" id="btnClear">Clear</button>
+            </div>
+            <div class="col-md-1 mt-auto">
+                <button class="btn btn-success btn-sm" id="btnExportExcel">Export to Excel</button>
+            </div>*@
+    </div>
+
+
+
+</div>
+
+<div class="table-responsive mt-5" style="border: 1px solid #ccc; padding: 1%;">
+    <table class="table table-sm small" id="tblformfive" cellspacing="0" width="100%">
+
+
+        <thead>
+            <tr>
+                <th scope="col">Employee Code</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Period</th>
+                <th scope="col">Relationship With Employee</th>
+                <th scope="col">Name Of Relative</th>
+                <th scope="col">Nature Of Engagement</th>
+                <th scope="col">Institution/Firm with Relative is associated</th>
+                <th scope="col">Names of Mutual Funds/AMCs</th>
+                <th scope="col">Designation/Agency/ARN Code etc</th>
+                <th scope="col">Place Of Posting/Operation</th>
+                <th scope="col">Action Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model as List<RelationDetails>)
+            {
+                <tr>
+                    <td>@item.employeecode</td>
+                    <td>@item.employeename</td>
+                    <td>@item.quarter</td>
+                    <td>@item.relationshipEmployee</td>
+                    <td>@item.relativeName</td>
+                    <td>@item.natureOfEngagement</td>
+                    <td>@item.firmsAssociated</td>
+                    <td>@item.mutualfundName</td>
+                    <td>@item.relativeDesignation</td>
+                    <td>@item.placeOfPosting</td>
+                    <td>@item.actionDate</td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('.selectpicker').selectpicker();
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        // Initialize DataTable
+        var table = $('#tblformfive').DataTable({
+            searching: true,
+            scrollX: true,
+            scrollY: true,
+            aLengthMenu: [
+                [5, 10, 50, 100, -1],
+                [5, 10, 50, 100, "All"]
+            ],
+            iDisplayLength: 5
+        });
+
+
+        function updateTable(data) {
+            var dataTable = $('#tblformfive').DataTable();
+
+            // Clear existing table data
+            dataTable.clear();
+
+            if (data && data.length > 0) {
+                // Add new rows
+                $.each(data, function (index, item) {
+                    dataTable.row.add([
+                        item.employeecode,
+                        item.employeename,
+                        item.quarter,
+                        item.relationshipEmployee,
+                        item.relativeName,
+                        item.natureOfEngagement,
+                        item.firmsAssociated,
+                        item.mutualfundName,
+                        item.relativeDesignation,
+                        item.placeOfPosting,
+                        item.actionDate
+                    ]).draw();
+                });
+            } else {
+                // Handle empty response
+                $('#tblformfive tbody').append('<tr><td colspan="10" style="text-align: center;">No data found</td></tr>');
+            }
+        }
+
+        $("#btnSearch").click(function () {
+
+            var from_date = $("#fromDate").val();
+            var to_date = $("#toDate").val();
+            var employeeCodeSearch = $("#employeeCodeSearch").val();
+            // var employeeNameSearch = $("#employeeNameSearch").val();
+            var designationSearch = $("#designationSearch").val();
+            var search_band = $("#bandSearch").val();
+            var departmentSearch = $("#departmentSearch").val();
+
+            var search_not_applicable = $("#applicableSearch").val();
+            var search_period_flag = $("#search_period_flag").val();
+            $("#dloading").show();
+            // AJAX call to fetch the data
+            $.ajax({
+                url: "/Report/Form5Rpt",
+                type: 'GET',
+                data: {
+                    from_date: from_date,
+                    to_date: to_date,
+                    employeeCodeSearch: employeeCodeSearch,
+                    // employeeNameSearch: employeeNameSearch,
+                    designationSearch: designationSearch,
+                    search_band: search_band,
+                    departmentSearch: departmentSearch,
+                    //  periodSearch: periodSearch,
+                    is_search_not_applicable: search_not_applicable,
+                    search_period_flag: search_period_flag,
+                },
+                success: function (data) {
+                    updateTable(data);
+                    // Reinitialize DataTable
+                    table.destroy(); // Destroy the existing DataTable instance
+                    table = $('#tblformfive').DataTable({
+                        searching: true,
+                        scrollX: true,
+                        scrollY: true,
+                        aLengthMenu: [
+                            [5, 10, 50, 100, -1],
+                            [5, 10, 50, 100, "All"]
+                        ],
+                        iDisplayLength: 5
+                    });
+                    $("#dloading").hide();
+                },
+                error: function (xhr, status, error) {
+                    // Handle errors here
+                    console.log(error);
+                }
+            });
+        });
+
+        $("#btnClear").click(function () {
+            // Reset all filter elements
+            $("#fromDate").val('');
+            $("#toDate").val('');
+            $("#employeeCodeSearch").val('');
+            $("#designationSearch").val('');
+            $("#bandSearch").val('');
+            $("#departmentSearch").val('');
+            $("#applicableSearch").val('');
+            $("#search_period_flag").val('');
+
+            // Trigger change event for selectpicker elements to update their UI
+            $('.selectpicker').selectpicker('refresh');
+
+            // Perform search again to fetch all data
+            $("#btnSearch").click();
+            // Reload the page
+            location.reload();
+
+        });
+
+
+        // Add click event for export to Excel button
+        $("#btnExportExcel").click(function () {
+            var from_date = $("#fromDate").val();
+            var to_date = $("#toDate").val();
+            var employeeCodeSearch = $("#employeeCodeSearch").val();
+            var designationSearch = $("#designationSearch").val();
+            var search_band = $("#bandSearch").val();
+            var departmentSearch = $("#departmentSearch").val();
+            var search_not_applicable = $("#applicableSearch").val();
+            var search_period_flag = $("#search_period_flag").val();
+            $("#dloading").show();
+            // AJAX call to fetch data for export to Excel
+            debugger;
+            $.ajax({
+                url: "/Report/ExportToExcel",
+                type: 'GET',
+                data: {
+                    from_date: from_date,
+                    to_date: to_date,
+                    employeeCodeSearch: employeeCodeSearch,
+                    designationSearch: designationSearch,
+                    search_band: search_band,
+                    departmentSearch: departmentSearch,
+                    is_search_not_applicable: search_not_applicable,
+                    search_period_flag: search_period_flag,
+                },
+                xhrFields: {
+                    responseType: 'blob'
+                },
+                success: function (data) {
+                    // Create a blob object from the response
+                    var blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+
+                    // Create a temporary URL for the blob
+                    var url = window.URL.createObjectURL(blob);
+
+                    // Create a link element and set its attributes
+                    var a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'Form5Report.xlsx';
+
+                    // Append the link to the document body
+                    document.body.appendChild(a);
+
+                    // Click the link to trigger the download
+                    a.click();
+
+                    // Remove the link from the document body
+                    document.body.removeChild(a);
+
+                    // Revoke the temporary URL
+                    $("#dloading").hide();
+                },
+                error: function (xhr, status, error) {
+                    // Handle errors here
+                    console.log(error);
+                }
+            });
+        });
+
+    });
+</script>

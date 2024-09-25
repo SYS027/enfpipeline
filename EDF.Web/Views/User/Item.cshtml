@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "User Master";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="bg-white p-3 border" ng-controller="User">
+    <div class="row pt-2 pb-2">
+        <div class="col-md-12">
+            <h3><b>Update User </b></h3>
+            <hr>
+        </div>
+    </div>
+    <br />
+    <form>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">User Code</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" ng-model="model.code" disabled />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">User Name</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="inputPassword3" ng-model="model.name" disabled />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Email Address</label>
+            <div class="col-sm-3">
+                <input type="email" class="form-control" ng-model="model.email" validator="[required]" disabled />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Role</label>
+            <div class="col-sm-3">
+                <select ng-model="model.role_id" ng-options="x.ID as x.Name for x in getroles" class="form-control" validator="[requiredSelect]" required></select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2">IsActive</div>
+            <div class="col-sm-3">
+                <div class="form-check">
+                    <input ng-checked="model.isactive" type="checkbox" id="gridCheck1" ng-model="model.isactive" />
+                    @*<label class="form-check-label" for="gridCheck1">
+                            IsActive
+                        </label>*@
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-5">
+                <button type="submit" class="btn btn-primary" ng-click="save()">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

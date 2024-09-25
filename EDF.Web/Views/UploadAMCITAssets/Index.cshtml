@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "Upload AMC IT Assets";
+}
+<script src="~/Scripts/jquery-2.2.3.min.js"></script>
+<style>
+    .loader {
+        position: fixed;
+        z-index: 1000001;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /*background: white;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: rotate;
+        animation-iteration-count: infinite;
+        /*animation-duration: 1.6s;*/
+    }
+
+
+        .loader > img {
+            width: 300px;
+            height: 200px;
+        }
+
+
+    .center {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+</style>
+<div class="bg-white p-3">
+    <div class="row pt-2 pb-2">
+        <div class="col-md-12">
+            <h5>Upload IT AMC/WAR Details</h5>
+            <hr />
+        </div>
+    </div>
+    <div ng-app="myApp" ng-controller="AMCITAssetsFileUpload">
+        <div ng-show="showLoader" class="loader" id="overlay">
+            <img src="~/images/loads.gif" alt="loading...">
+        </div>
+        <div class="row mt-3">
+            <form>
+                <div class="col-md-12 mt-4">
+
+                    <div class="form-group form-row">
+                        <div class="custom-file">
+                            <label class="col-md-2">Upload File: </label>
+                            <input type="file" ng-model="xlFile" id="xlFile" name="xlFile" class="col-md-8" multiple="multiple" ngf-select="getUploadFiles($files)" />
+                        </div>
+                    </div>
+
+                    <div align="right">
+                        <a class="btn btn-primary" href="/UploadAMCITAssets/Download/0">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                            Format
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="row mt-5" style="padding-top: 50px;">
+                    <div class="form-group col-md-3">
+                        <button type="button" class="btn btn-primary w-100"
+                                ng-click="getUploadFile_ITAssets(xlFile[0].name,model.remark)">
+                            Upload
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <form id="exportData" action="/UploadAMCITAssets/GetExportToExcel" style="display:none">
+            <input type="text" value="" name="FromDate" />
+        </form>
+        @* created by anil 06-04-2023*@
+        <h4>Uploaded File History</h4>
+        <div style="overflow:auto">
+            <table class="table table-hover table-bordered" id="table_id">
+                <thead>
+                    <tr style="background-color:darkgrey">
+                        <th>SrNo</th>
+                        <th>Asset Types</th>
+                        <th>File Name</th>
+                        <th>Total Record</th>
+                        <th>Uploaded On</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in upload_history_grid">
+                        <td>{{$index+1}}</td>
+                        <td>{{item.asset_type}}</td>
+                        <td>{{item.file_name}}</td>
+                        <td>{{item.total_rec_count}}</td>
+                        <td>{{item.created_date | date:'dd-MMM-yyyy'}}</td>
+                        <td><button type="submit" class="btn btn-danger" ng-click="delete(item.file_name)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        @*<div style="overflow:auto" class="scrollit">
+
+
+        </div>*@
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#exportSubmit").click(function () {
+
+            debugger;
+            var FromDate = $("#FROM_DATE").val();
+            $("#exportData input[name=FromDate]").val(FromDate);
+
+            $("#exportData").submit();
+        })
+    });
+</script>
+
+

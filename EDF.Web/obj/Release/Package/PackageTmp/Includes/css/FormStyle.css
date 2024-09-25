@@ -1,0 +1,87 @@
+﻿
+/*body {
+    width: 70%;
+    margin: auto;
+}*/
+
+/* h6 {
+        width: 70%;
+        text-align: center;
+        margin: auto;
+    } */
+
+.tbl {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.tbl,
+th,
+td {
+    white-space: nowrap;
+    padding: 10px;
+}
+
+    .tbl th,
+    .tbl td {
+        white-space: nowrap;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+.btn-default {
+    background-color: #000;
+    color: #093f41;
+    border-color: 2px #00cc99
+}
+
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 -10px rgb(3, 27, 252);
+    }
+
+    40% {
+        box-shadow: 0 0 20px rgb(27, 2, 250);
+    }
+
+    60% {
+        box-shadow: 0 0 20px rgb(29, 4, 253);
+    }
+
+    100% {
+        box-shadow: 0 0 -10px rgb(27, 2, 255);
+    }
+}
+
+.button-glow {
+    animation: glowing 1800ms infinite;
+}
+
+/*-------------------------------------*/
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 -10px rgb(3, 27, 252);
+    }
+
+    40% {
+        box-shadow: 0 0 20px rgb(27, 2, 250);
+    }
+
+    60% {
+        box-shadow: 0 0 20px rgb(29, 4, 253);
+    }
+
+    100% {
+        box-shadow: 0 0 -10px rgb(27, 2, 255);
+    }
+}
+
+.button-glow {
+    animation: glowing 1800ms infinite;
+}
+.btn-default {
+    background-color: #000;
+    color: #093f41;
+    border-color: 2px #00cc99
+}

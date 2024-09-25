@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<div class="bg-white p-3">
+    <div class="row pt-2 pb-2">
+        <div class="col-md-12">
+            <h4><b>Form 2A List</b></h4>
+            <hr />
+        </div>
+    </div>
+
+    @*<div class="row">
+            <div class=" col-md-12 text-end"> <a href="/Form5/Item/0" class="btn btn-primary plusbut float-right ml-1">+</a></div>
+        </div>*@
+    <br />
+
+    <div>
+
+        <table class="table table-hover table-bordered" id="tblProperty">
+            <thead>
+                <tr style="background-color:darkgrey">
+                    <th>Employee Id</th>
+                    <th>Employee Name</th>
+                    <th>Submission_Period</th>
+                    <th>Created date</th>
+                    <th>Nature Of Property</th>
+                    <th>Present Market Value</th>
+                    <th>Property Owned By</th>
+                    <th>Name Of Spouse</th>
+                    <th>Nature Of Acquisition</th>
+                    <th>Date Of Acquisition</th>
+                    <th>Country</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Pin Code</th>
+                    <th>Street Address</th>
+                    <th>Acquired Name</th>
+                    <th>Acquired Address</th>
+                    <th>Housing Loan</th>
+                    <th>PF Loan</th>
+                    <th>Saving</th>
+                    <th>Others</th>
+                    <th>Total</th>
+                    <th>Annual Income From Property</th>
+                    <th>Remarks</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.PropertyDetails)
+                {
+                    <tr>
+                        <td>@item.employeecode</td>
+                        <td>@item.employeename</td>
+                        <td>@item.submission_period (@item.elg_period)</td>
+                        <td>@item.created_date.ToString("dd/MM/yyyy")</td>
+                        <td>@item.natureOfProperty</td>
+                        <td>@item.presentMarketValue</td>
+                        <td>@item.propertyOwnedBy</td>
+                        <td>@item.nameOfSpouse</td>
+                        <td>@item.natureOfAcuisition</td>
+
+                        <td>@item.dateOfAcuisition2</td>
+                        <td>@item.country</td>
+                        <td>@item.state</td>
+                        <td>@item.city</td>
+                        <td>@item.pinCode</td>
+                        <td>@item.streetAddress</td>
+                        <td>@item.acquiredName</td>
+                        <td>@item.acquiredAddress</td>
+                        <td>@item.housingLoan</td>
+                        <td>@item.pfLoan</td>
+                        <td>@item.saving</td>
+                        <td>@item.others</td>
+                        <td>@item.total</td>
+                        <td>@item.annualIncomeFromProperty</td>
+                        <td>@item.remarks</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<script>
+
+    //$(document).ready(function () {
+    $('#tblProperty').DataTable({
+        searching: true,
+        scrollX: true,
+        scrollY: true,
+        aLengthMenu: [
+            [5, 10, 50, 100, -1],
+            [5, 10, 50, 100, "All"]
+        ],
+        iDisplayLength: 5
+    });
+    //})
+
+
+
+</script>
+

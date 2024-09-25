@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<div class="bg-white p-3">
+    <div class="row pt-2 pb-2">
+        <div class="col-md-12">
+            <h4><b>Form 5 List</b></h4>
+            <hr />
+        </div>
+    </div>
+
+    @*<div class="row">
+            <div class=" col-md-12 text-end"> <a href="/Form5/Item/0" class="btn btn-primary plusbut float-right ml-1">+</a></div>
+        </div>*@
+    <br />
+
+    <div>
+
+        <table class="table table-hover table-bordered" id="tblRelative">
+            <thead>
+                <tr style="background-color:darkgrey">
+                    <th>Employee Id</th>
+                    <th>Employee Name</th>
+                    <th>Period</th>
+                    <th>Relationship With Employee</th>
+                    <th>Name Of Relative</th>
+                    <th>Nature of Engagement</th>
+                    <th>Institution/Firms with which Relative is associated</th>
+                    <th>Names of Mutual Funds/AMCs</th>
+                    <th>Designation /Agency/ARN Code etc</th>
+                    <th>Place of Posting/Operation</th>
+                    <th>Action Date</th>
+                    <th>Submission_Period</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.RelativeDetails)
+                {
+                    <tr>
+                        <td>@item.employeecode</td>
+                        <td>@item.employeename</td>
+                        <td>@item.quarter</td>
+                        <td>@item.relationshipEmployee</td>
+                        <td>@item.relativeName</td>
+                        <td>@item.natureOfEngagement</td>
+                        <td>@item.firmsAssociated</td>
+                        <td>@item.mutualfundName</td>
+                        <td>@item.relativeDesignation</td>
+                        <td>@item.placeOfPosting</td>
+                        <td>@item.actionDate</td>
+                        <td>@item.submission_period</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<script>
+
+
+    $('#tblRelative').DataTable({
+        searching: true,
+        scrollX: true,
+        scrollY: true,
+        aLengthMenu: [
+            [5, 10, 50, 100, -1],
+            [5, 10, 50, 100, "All"]
+        ],
+        iDisplayLength: 5
+    });
+
+</script>

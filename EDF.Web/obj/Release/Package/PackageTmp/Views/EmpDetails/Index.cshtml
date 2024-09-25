@@ -1,0 +1,493 @@
+﻿@model IEnumerable<ENF.Models.EmpDetails.EmployeeDetailsNC>
+
+@{
+    ViewBag.Title = "_EmpDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .form-select {
+        font-size: 12px;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .multiselect {
+        width: 100% !important;
+        text-align: left;
+    }
+
+    .btn .caret {
+        margin-left: 0;
+        display: none;
+    }
+
+    .btn-group {
+        width: 100%; /* Changed from -webkit-fill-available for better browser compatibility */
+        height: 34px;
+        border: 1px solid #d1e0e0;
+        border-radius: 4px;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 20px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+        background-color: #0070bd;
+        height: 26px;
+        width: 25px;
+        margin-bottom: -5px;
+    }
+
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .tbl {
+        width: 100%;
+    }
+
+    .multiselect-container {
+        width: 100% !important;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    .tbl,
+    th,
+    td {
+        white-space: nowrap;
+        padding: 10px;
+    }
+
+        .tbl th,
+        .tbl td {
+            white-space: nowrap;
+            padding: 10px;
+            border: 1px solid #ddd;
+            width: 194px;
+        }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 22px;
+    }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        @*<div>
+            <h4>
+                Nomination Category Master
+                <center style="font-size: x-large"></center>
+            </h4>
+        </div>
+        <hr style="border : 1px solid gray" class="m-0" />*@
+
+
+        <div class="row pt-2 pb-2">
+            <div class="col-md-12">
+                <h4><b> Nomination Category Master</b></h4>
+                <hr>
+            </div>
+        </div>
+        <div class="bg-white p-3">
+            <div class="row">
+                @*<div class="col-md-8" style="height: 60px; width: 100%; display: flex; justify-content: space-between;">
+                    <div style="color: #4154f1;">
+                        <a onclick="history.back()">
+                            <i class="bi bi-arrow-return-left" style="font-size: 40px;"></i>
+                        </a>
+                    </div>
+                </div>*@
+
+
+                <div class="tab-pane" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
+                    <div class="col-md-12 mt-2">
+                        <div class="row">
+                            <div class="d-none">
+                                <label class="mt-4"> Employee Code</label>
+                                <input type="text" class="form-control" id="empCode" value="@ViewBag.employeecode">
+                                <span class="error text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="mt-4">Category Name</label>
+                                <input type="text" class="form-control" id="encategoryname" style="height: 34px;">
+                                <span class="error text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-3" id="eneligibleDiv">
+                                <label class="mt-4">Eligible</label>
+                                <br />
+                                <select class="form-select w-100 " id="eneligible" multiple name="eligiblefamilymember">
+                                    @if (ViewBag.reg_cod != null)
+                                    {
+                                        foreach (var item in ViewBag.eligible)
+                                        {
+                                            if (item.relationship_name != null)
+                                            {
+                                                <option value="@item.relationship_name">@item.relationship_name</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                                <span class="error text-danger"></span>
+                            </div>
+                            @*<span class="error text-danger"></span>*@
+                            @*<div class="form-group col-md-3" style="margin-top: 42px;">
+                                <label class="form-group switch">
+                                    <input type="checkbox" />
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>*@
+                            <div class="form-group col-md-3">
+                                <button id="btn_submit" class="btn btn-primary mt-5">
+                                    Add<i><img src="~/Includes/img/btn-spinner.gif" style="display:none" /></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="">
+
+    <hr class="m-0" style="border: 1px solid black;">
+
+    <div class="card">
+
+        <div class="table-responsive p-1">
+            <br />
+            <table class="table table-bordered w-100" id="tblLovCategoryMaster">
+
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Category Code</th>
+                        <th>Nominee Type</th>
+                        <th>Eligible</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int serialNumber = 1;
+                    }
+                    @foreach (var item in Model)
+                    {
+                        bool isActive = item.is_active == "Y";
+
+                        <tr>
+                            <td>@serialNumber</td>
+                            <input type="hidden" name="empCode" value="@ViewBag.employeecode"/>
+                            <input type="hidden" name="nomination_id" value="@item.nomination_id" />
+                            <td data-nomination_category_code="@item.nomination_category_code">
+                                @item.nomination_category_code
+                            </td>
+
+                            <td>@item.nomination_category_name</td>
+                            <td>
+                                <select class="eneligible2 form-select w-100" multiple="multiple" name="eligiblefamilymember">
+                                    @if (ViewBag.eligible != null)
+                                    {
+                                        foreach (var relationship in ViewBag.eligible)
+                                        {
+                                            bool isChecked = item.relationship_codes.Contains(relationship.relationship_code);
+
+                                            <option value="@relationship.relationship_code" @(isChecked ? "selected" : "")>
+                                                @relationship.relationship_name
+                                            </option>
+                                        }
+                                    }
+                                </select>
+                            </td>
+
+                            <td>
+                                <div class="form-group mt-2 ">
+                                    <label class="switch">
+                                        <input type="checkbox"
+                                               @(isActive ? "checked" : "")
+                                               data-id="@item.nomination_id"
+                                               data-nomination_category_code="@item.nomination_category_code"
+                                               onchange="updateIsActive(this)" />
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+
+                            </td>
+
+                            <td>
+                                <div class="d-flex justify-content-end mt-2 mr-5">
+                                    <button type="button" class="btn btn-primary mr-2" style="width: -webkit-fill-available" onclick="saveChanges(this)">Update</button>
+                                </div>
+                            </td>
+                        </tr>
+                        serialNumber++;
+                    }
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+
+    $('#btn_submit').click(function () {
+        var error = false;
+        $(".error").html("");
+
+        let empcode = $("#empCode").val();
+
+        let categoryname = $("#encategoryname").val();
+        if (categoryname === "") {
+            $('#encategoryname').parent().find("span.error").html("Required*");
+            error = true;
+        }
+
+        let eligble = $("#eneligible").val();
+        if (eligble === "" || eligble.length === 0) {
+            $('#eneligibleDiv').find("span.error").html("Please select at least one member.*");
+            error = true;
+        }
+
+        if (error) {
+            return;
+        }
+
+        var obj = {
+            'employeecode': empcode,
+            'Eligble': eligble,
+            'nomination_category_name': categoryname
+        };
+        console.log(obj);
+
+        $("#btn_submit").find("img").show();
+        $("#btn_submit").attr("disabled", true);
+
+        $.ajax({
+            url: '@Url.Action("CreateRecord", "EmpDetails")',
+            type: "POST",
+            data: obj,
+            success: function (data) {
+                if (data.status === true) {
+                    toastr.success(data.message);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 6000);
+                } else {
+
+                    toastr.error(data.message);
+                    //window.location.reload();
+                }
+                $("#btn_submit").find("img").hide();
+                $("#btn_submit").attr("disabled", false);
+            },
+            error: function (err) {
+                console.error(err.message);
+                $("#btn_submit").find("img").hide();
+                $("#btn_submit").attr("disabled", false);
+
+            },
+        });
+    });
+    toastr.options = {
+        closeButton: true,
+        progressBar: true,
+        positionClass: 'toast-top-right',
+        timeOut: 5000,
+    };
+</script>
+<script>
+    $('#eneligible').multiselect({
+        enableFiltering: true,
+        includeSelectAllOption: true,
+        selectAllText: 'Select All',
+       // nonSelectedText: 'Select Eligible Members',
+        allSelectedText: 'All Selected',
+        buttonWidth: '100%',
+        maxHeight: 200,
+        numberDisplayed: 2
+    });
+    $('.eneligible2').multiselect({
+        search: true,
+        selectAll: true
+    });
+
+    function updateIsActive(checkbox) {
+        const isChecked = checkbox.checked;
+        const nominationId = checkbox.getAttribute('data-id');
+        const status = isChecked ? 'Y' : 'N';
+        const nominationCategoryCode = checkbox.getAttribute('data-nomination_category_code');
+
+        if (!isChecked) {
+            const confirmed = confirm("Are you sure you want to deactivate and remove this item?");
+            if (!confirmed) {
+                checkbox.checked = true;
+                return;
+            }
+        }
+
+        $.ajax({
+            url: '@Url.Action("UpdateStatus", "EmpDetails")',
+            type: 'POST',
+            data: JSON.stringify({ nominationId: nominationId, status: status, nominationCategoryCode: nominationCategoryCode }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function (result) {
+                if (result.status) {
+                    if (!isChecked) {
+                        $("#row-" + nominationId).remove();
+                        alert("Item removed successfully.");
+                    } else {
+                        alert("Item status updated successfully.");
+                    }
+                } else {
+
+                    window.location.reload();
+                    alert("Item status updated successfully.");
+                }
+            },
+            error: function () {
+                alert("An error occurred while updating the item status.");
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $(".status-checkbox").change(function () {
+            updateIsActive(this);
+        });
+    });
+</script>
+<script>
+    $('#tblLovCategoryMaster').DataTable({
+        searching: true,
+        scrollX: false,
+        aLengthMenu: [
+            [5, 10, 15, 20, -1],
+            [5, 10, 15, 20, "All"]
+        ],
+        iDisplayLength: 25
+    });
+ function saveChanges(button) {
+    var row = $(button).closest('tr');
+
+     var employeeCode = row.find('input[type="hidden"][name="empCode"]').val();
+    var nominationId = row.find('input[type="hidden"][name="nomination_id"]').val();
+    var nominationCategoryCode = row.find('td').eq(1).text().trim();
+    var selectedValues = row.find('select.eneligible2').val() ? row.find('select.eneligible2').val() : [];
+    var isActive = row.find('input[type="checkbox"]').is(':checked');
+
+    var relationshipNames = [];
+    var unselectedValues = [];
+
+    row.find('select.eneligible2 option').each(function () {
+        if ($(this).is(':selected')) {
+            relationshipNames.push($(this).text().trim());
+        } else {
+            unselectedValues.push($(this).val());
+        }
+    });
+
+     var data = {
+        employeecode: employeeCode,
+        NominationCategoryCode: nominationCategoryCode,
+        SelectedValues: selectedValues,
+        IsActive: isActive,
+        RelationshipNames: relationshipNames,
+        UnselectedValues: unselectedValues
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: '@Url.Action("UpdateEligibleCategories", "EmpDetails")',
+        data: JSON.stringify([data]), // Ensure data is wrapped in an array if expecting a list
+        contentType: 'application/json; charset=utf-8',
+        success: function (response) {
+            if (response.status === true) {
+                toastr.success(response.message);
+                setTimeout(function () {
+                    window.location.reload();
+                }, 6000);
+            } else {
+                toastr.error(response.message);
+            }
+        },
+        error: function (error) {
+            alert('An error occurred: ' + error.responseText);
+        }
+    });
+}
+
+</script>
+
+
+
+

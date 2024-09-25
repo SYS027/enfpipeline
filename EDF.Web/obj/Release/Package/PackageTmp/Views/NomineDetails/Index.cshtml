@@ -1,0 +1,93 @@
+﻿@model List<EDF.Web.Models.EmployeeFullDetails>
+
+@{
+    ViewBag.Title = "Family Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--<div class="row mb-3">-->
+<!-- Header for Nominee Details -->
+<!--<div class="col-md-12">
+        <h2 class="text-center mt-3">Nominee Details</h2>
+    </div>
+</div>
+<hr class="m-0" />-->
+
+<div class="row pt-2 pb-2">
+    <div class="col-md-12">
+        <h4><b>Nominee Details</b></h4>
+        <hr>
+    </div>
+</div>
+
+<form class="pb-lg-4 form_body">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+
+
+                <!-- Select Nomination Type -->
+                <div class="col-md-5 mb-5">
+                    <label for="nominationCatCode">Select Nomination Type</label>
+                    <select class="form-control" id="nominationCatCode">
+                        <option value="">Select</option>
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            <option value="@Model[i].NominationCategoryCode">@Model[i].NominationCategoryName</option>
+                        }
+                    </select>
+                </div>
+                <br />
+
+                <!-- Accordion for dynamic table data -->
+                <div class="accordion mt-6" id="TableData"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center mt-4 btn_Div">
+        <button id="submit-button" class="btn btn-primary" style="display:none;">Submit</button>
+
+    </div>
+</form>
+
+<script>
+    // On change event for the nomination type dropdown
+    $("#nominationCatCode").change(function () {
+        var nomination_code = $(this).val();
+
+        // Check if the user has selected a nomination category
+        if (!nomination_code) {
+            console.error("No nomination category code selected");
+            return;
+        }
+
+        // Clear and show the table data container
+        $('#TableData').show();
+        $('#TableData').html(''); // Clear any existing table data
+
+        // AJAX call to fetch the nominee details based on selected category
+        $.ajax({
+            url: "/NomineDetails/_NomineeDetails",
+            type: "GET",
+            data: { 'nomination_cat_code': nomination_code },
+            dataType: "html",
+            success: function (result) {
+                try {
+                    $("#TableData").html(result); // Insert the result into the table
+                } catch (e) {
+                    console.error("Error updating TableData: ", e);
+                }
+            },
+            error: function (xhr) {
+                if (xhr.status === 401) {
+                    window.location.reload(); // Reload the page if unauthorized
+                    return;
+                }
+                console.error("Error fetching nominee details:", xhr);
+                $("#TableData").hide(); // Hide the table if there's an error
+            }
+        });
+    });
+</script>

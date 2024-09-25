@@ -1,0 +1,461 @@
+﻿@model List<EDF.Web.Models.NominationReportModel>
+@{
+    ViewBag.Title = "Index";
+    //Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap-select-min.css" rel="stylesheet" />
+
+<script src="~/Assets/bootstrap-select.min.js"></script>
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+
+
+<style>
+    .dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover {
+        background-color: #0d6efd;
+    }
+
+    .bootstrap-select > .dropdown-toggle {
+        border: 1px solid #ccc;
+    }
+
+    .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+        color: #555;
+    }
+
+    .bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+        background-color: white;
+    }
+</style>
+
+<header><h4><b>Nomination Report</b></h4></header>
+<hr>
+<div class="row m-0">
+    <div class="row">
+        <div class="col-md-3 mt-3">
+            <label for="">From Date</label>
+            <input type="date" id="fromDate" class="form-control">
+        </div>
+        <div class="col-md-3 mt-3">
+            <label for="">To Date</label>
+            <input type="date" id="toDate" class="form-control">
+        </div>
+        <div class="col-md-3 mt-3">
+            <label for="employeeCodeSearch">Employee</label>
+
+            <select class="selectpicker form-control" data-live-search="true" id="employeeCodeSearch">
+                <option value="">Select</option>-->
+                @foreach (var item in ViewBag.EmpName)
+                {
+                    <option value="@item.employeecode">@item.employeename, @item.employeecode</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-3 mt-3">
+            <label for="">Nomination Type</label>
+            <select id="search_nomination_type" class="form-select">
+                <option value="">Select</option>-->
+                @foreach (var item in ViewBag.NominationCategory)
+                {
+                    <option value="@item.nomination_category_code"> @item.nomination_category_name</option>
+                }
+
+            </select>
+        </div>
+
+        <div class="col-md-3 mt-4">
+            <label for="">Status of Family Member</label>
+            <select id="family_member_type" class="form-select">
+                <option value="">Select</option>
+                <option value="A">Addition</option>
+                <option value="D">Deletion</option>               
+            </select>
+        </div>
+
+
+                   <!--<div class="col-md-3 mt-3">
+                       <label for="">Submisssion Period</label>
+                       <select id="search_period_flag" class="form-select">
+                           <option value="">Select</option>-->
+                @*@foreach (var item in ViewBag.lstperiodflagfor5)
+                {
+                    <option value="@item.period_flag"> @item.period_flag</option>
+                }*@
+
+                <!--</select>
+
+            </div>
+
+            <div class="col-md-3 mt-3">
+                <label for="employeeCodeSearch">Employee</label>
+
+                <select class="selectpicker form-control" data-live-search="true" id="employeeCodeSearch">
+                    <option value="">Select</option>-->
+                @*@foreach (var item in ViewBag.EmpName)
+                {
+                    <option value="@item.employeecode">@item.employeename, @item.employeecode</option>
+                }*@
+                <!--</select>
+
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-3 mt-3">
+                    <label for="">Designation</label>
+                    <select id="designationSearch" class="form-select">
+                        <option value="">Select</option>-->
+                @*@foreach (var item in ViewBag.designation)
+                {
+                    <option value="@item.attribute_type_unit_desc"> @item.attribute_type_unit_desc</option>
+                }*@
+
+                <!--</select>
+
+            </div>
+            <div class="col-md-3 mt-3">
+                <label for="">Band</label>
+                <select id="bandSearch" class="form-select">
+                    <option value="">Select</option>-->
+                @*@foreach (var item in ViewBag.band)
+                {
+                    <option value="@item.attribute_type_unit_desc"> @item.attribute_type_unit_desc</option>
+                }*@
+
+                <!--</select>
+            </div>
+            <div class="col-md-3 mt-3">
+                <label for="">Department</label>
+                <select id="departmentSearch" class="form-select">
+                    <option value="">Select</option>-->
+                @*@foreach (var item in ViewBag.department)
+                {
+                    <option value="@item.attribute_type_unit_desc"> @item.attribute_type_unit_desc</option>
+                }*@
+
+                <!--</select>
+
+            </div>
+
+            <div class="col-md-3 mt-3">
+                <label for="">Status</label>
+                <select id="applicableSearch" class="form-select">
+                    <option value="">Select</option>-->
+                @*@foreach (var item in ViewBag.lstnotapplicable)
+                {
+                    <option value="@item.not_applicable">
+                        @if (item.not_applicable == true)
+                        {
+                            @Html.Raw("Not Applicable")
+                        }
+                        else
+                        {
+                            @Html.Raw("Not Submitted")
+                        }
+                    </option>
+                }*@
+                <!--</select>
+            </div>-->
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-3" style="text-align:right;">
+                <button class="btn btn-primary" id="btnSearch">Search</button>
+                <button class="btn btn-secondary" id="btnClear">Clear</button>
+                <button class="btn btn-success" id="btnExportExcel">Export to Excel</button>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+<div class="table-responsive mt-5" style="border: 1px solid #ccc; padding: 1%;">
+    <table class="table" id="nomineereport" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th scope="col">S.No.</th>
+                <th scope="col">Employee Code</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Family Member Name</th>
+                <th scope="col">Nomination Type</th>
+                <th scope="col">Relation With Employee</th>
+                <th scope="col">Share of Percentage</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                int serialNumber = 1;
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@serialNumber</td>
+                        <td>@item.employeecode</td>
+                        <td>@item.employeename</td>
+                        <td>@item.first_name @item.last_name</td>
+                        <td>@item.nomination_category_name</td>
+                        <td>@item.relationship_name</td>
+                        <td>@item.share_of_percentage</td>
+                    </tr>
+                    serialNumber++;
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7"><center>No records found.</center></td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+      
+        // Initialize DataTable on page load
+        var dataTable = $('#nomineereport').DataTable({
+            searching: true,
+            scrollX: false,
+            aLengthMenu: [
+                [5, 10, 15, 20, -1],
+                [5, 10, 15, 20, "All"]
+            ],
+            iDisplayLength: 10
+        });
+
+        // Function to update table with new data
+        function updateTable(data) {
+            // Clear existing table data
+            dataTable.clear();
+
+            if (data && data.length > 0) {
+                // Add new rows
+                $.each(data, function (index, item) {
+                    dataTable.row.add([
+                        index + 1, // Update the serial number
+                        item.employeecode,
+                        item.employeename,
+                        item.first_name + " " + item.last_name,
+                        item.nomination_category_name,
+                        item.relationship_name,
+                        item.share_of_percentage
+                    ]);
+                });
+                dataTable.draw();
+            } else {
+                // Handle empty response
+                $('#nomineereport tbody').html('<tr><td colspan="7" style="text-align: center;">No data found</td></tr>');
+            }
+        }
+
+        // Search button click event
+        $("#btnSearch").click(function () {
+            var from_date = $("#fromDate").val();
+            var to_date = $("#toDate").val();
+            var employeeCodeSearch = $("#employeeCodeSearch").val();
+            var nominationTypeSearch = $("#search_nomination_type").val();
+            var familyMemberType = $("#family_member_type").val();
+            //debugger;
+            // AJAX call to fetch filtered data
+            $.ajax({
+                url: "/NominationReport/Index",
+                type: 'GET',
+                data: {
+                    from_date: from_date,
+                    to_date: to_date,
+                    employeeCodeSearch: employeeCodeSearch,
+                    nominationTypeSearch: nominationTypeSearch,
+                    familyMemberType: familyMemberType
+                },
+                success: function (data) {
+                    updateTable(data);
+                },
+                error: function (xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        });
+
+        // Clear button click event
+        $("#btnClear").click(function () {
+            // Reset all filter elements
+            $("#fromDate").val('');
+            $("#toDate").val('');
+            $("#employeeCodeSearch").val('');
+            $("#search_nomination_type").val('');
+            $("#family_member_type").val('');
+
+            // Trigger search to fetch all data again
+            $("#btnSearch").click();
+            location.reload();
+        });
+
+
+
+        // Add click event for export to Excel button
+        $("#btnExportExcel").click(function () {
+            var from_date = $("#fromDate").val();
+            var to_date = $("#toDate").val();
+            var employeeCodeSearch = $("#employeeCodeSearch").val();
+            var nominationTypeSearch = $("#search_nomination_type").val();
+            var familyMemberType = $("#family_member_type").val();
+            //$("#dloading").show();
+            // AJAX call to fetch data for export to Excel
+            $.ajax({
+                url: "/NominationReport/ExportToExcel",
+                type: 'GET',
+                data: {
+                    from_date: from_date,
+                    to_date: to_date,
+                    employeeCodeSearch: employeeCodeSearch,
+                    nominationTypeSearch: nominationTypeSearch,                  
+                },
+                xhrFields: {
+                    responseType: 'blob'
+                },
+                success: function (data) {
+                    // Create a blob object from the response
+                    var blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+
+                    // Create a temporary URL for the blob
+                    var url = window.URL.createObjectURL(blob);
+
+                    // Create a link element and set its attributes
+                    var a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'NominationReport.xlsx';
+
+                    // Append the link to the document body
+                    document.body.appendChild(a);
+
+                    // Click the link to trigger the download
+                    a.click();
+
+                    // Remove the link from the document body
+                    document.body.removeChild(a);
+
+                    // Revoke the temporary URL
+                    window.URL.revokeObjectURL(url);
+                   // $("#dloading").hide();
+                },
+                error: function (xhr, status, error) {
+                    // Handle errors here
+                    console.log(error);
+                }
+            });
+        });
+
+
+    });
+
+</script>
+
+@*<script>
+
+    var dataTable = $('#nomineereport').DataTable({
+        searching: true,
+        scrollX: false,
+        aLengthMenu: [
+            [5, 10, 15, 20, -1],
+            [5, 10, 15, 20, "All"]
+        ],
+        iDisplayLength: 10
+    });
+
+
+    function updateTable(data) {       
+
+        // Clear existing table data
+        dataTable.clear();
+
+        if (data && data.length > 0) {
+            // Add new rows
+            $.each(data, function (index, item) {
+                dataTable.row.add([
+
+                    item.serialNumber,
+                    item.employeecode,
+                    item.employeename,
+                    item.first_name + " " + item.last_name,
+                    item.nomination_category_name,
+                    item.relationship_name,
+                    item.share_of_percentage
+
+                ]).draw();
+            });
+        } else {
+            // Handle empty response
+            $('#nomineereport tbody').append('<tr><td colspan="7" style="text-align: center;">No data found</td></tr>');
+
+        }
+    }
+    $("#btnSearch").click(function () {
+        debugger;
+        var from_date = $("#fromDate").val();
+        var to_date = $("#toDate").val();
+        var employeeCodeSearch = $("#employeeCodeSearch").val();
+        var nominationTypeSearch = $("#search_nomination_type").val();
+
+        //$("#dloading").show();
+        // AJAX call to fetch the data
+        $.ajax({
+            url: "/NominationReport/Index",
+            type: 'GET',
+            data: {
+                from_date: from_date,
+                to_date: to_date,
+                employeeCodeSearch: employeeCodeSearch,
+                nominationTypeSearch: nominationTypeSearch,
+
+            },
+
+            success: function (data) {
+                updateTable(data);
+                // Reinitialize DataTable
+                //table.destroy(); // Destroy the existing DataTable instance
+                //table = $('#nomineereport').DataTable({
+                //    searching: true,
+                //    scrollX: false,
+                //    aLengthMenu: [
+                //        [5, 10, 50, 100, -1],
+                //        [5, 10, 50, 100, "All"]
+                //    ],
+                //    iDisplayLength: 10
+                //});
+                //$("#dloading").hide();
+            },
+            error: function (xhr, status, error) {
+                // Handle errors here
+                console.log(error);
+            }
+        });
+    });
+
+    $("#btnClear").click(function () {
+        // Reset all filter elements
+        $("#fromDate").val('');
+        $("#toDate").val('');
+        $("#employeeCodeSearch").val('');
+        $("#search_nomination_type").val('');
+
+        // Trigger change event for selectpicker elements to update their UI
+        //$('.selectpicker').selectpicker('refresh');
+
+        // Perform search again to fetch all data
+        $("#btnSearch").click();
+        // Reload the page
+        location.reload();
+    });
+
+
+
+</script>*@

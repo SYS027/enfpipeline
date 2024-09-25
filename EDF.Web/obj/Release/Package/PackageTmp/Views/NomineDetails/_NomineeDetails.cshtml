@@ -1,0 +1,508 @@
+﻿@model List<EDF.Web.Models.EmployeeFullDetail>
+
+
+
+@{decimal totalpercentage = 0;
+    bool hasPercentageParent = false;
+    var deletedRecordsDict = ViewBag.DeletedRecords as Dictionary<int, EDF.Web.Models.FamilyPercentageSharingHistory>;}
+
+<style>
+    #textdis {
+        text-align: center;
+        margin-left: 34%;
+    }
+</style>
+
+<style>
+    .hidden {
+        display: none;
+    }
+
+    .percentage-input {
+        width: 200px; /* Adjust the width as needed */
+    }
+</style>
+
+<table class="table table-bordered" id="tblNominee">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Nominee Name </th>
+            <th>Percentage of Sharing</th>
+            <th id="textdis">Add/Remove</th>
+        </tr>
+    </thead>
+
+
+    <tbody id="nominee-table-body">
+
+        @{ for (int i = 0; i < Model.Count(); i++)
+            {
+                int index = 1;
+                decimal totalPercentage = 0;
+                var noPercentageNominees = new List<EDF.Web.Models.FamilyDetail>();
+
+                //foreach (var item in Model[i].FamilyDetails)
+                //{
+                //    if (item.ShareOfPercentage.HasValue)
+                //    {
+                //        totalPercentage += item.ShareOfPercentage.Value;
+                //        totalpercentage = totalPercentage;
+                //    }
+                //    else
+                //    {
+                //        noPercentageNominees.Add(item);
+                //    }
+                //}
+
+                for (int j = 0; j < Model[i].FamilyDetails.Count; j++)
+                {
+                    if (Model[i].FamilyDetails[j].ShareOfPercentage.HasValue)
+                    {
+                        hasPercentageParent = true;
+
+                        if ((Model[i].FamilyDetails[j].pd_is_active == "Y") && (Model[i].FamilyDetails[j].perc_is_active == "Y"))
+                        {
+                            totalPercentage += Model[i].FamilyDetails[j].ShareOfPercentage.Value;
+                            totalpercentage = totalPercentage;
+
+                            <tr class="percTr">
+                                <td>@index</td>
+                                <td>
+                                    <select class="form-control nominee-name" data-id="@Model[i].FamilyDetails[j].FamilyId">
+                                        <option value="">Select</option>
+                                        @foreach (var familyMember in Model[i].FamilyDetails)
+                                        {
+                                            if (familyMember.pd_is_active == "Y")
+                                            {
+                                                var fullName = $"{familyMember.FullName}".Trim();
+                                                var selected = Model[i].FamilyDetails[j].FamilyId == familyMember.FamilyId ? "selected" : "";
+                                                <option value="@familyMember.FamilyId|@familyMember.RelationshipCode" @selected>@fullName (@familyMember.RelationshipName)</option>
+                                            }
+                                        }
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control percentage-input" value="@(Model[i].FamilyDetails[j].ShareOfPercentage.HasValue ? Model[i].FamilyDetails[j].ShareOfPercentage.Value.ToString("0.##") + "%" : "0%")" />
+                                </td>
+
+                                <td>
+                                    <div class="text-center" id="textdis">
+                                        @*<button type="button" class="btn btn-success add-row" style="margin-left:10px" data-nomination_cat_code="@Model[i].NominationCategoryCode">+</button> &nbsp;&nbsp;&nbsp;&nbsp;*@
+                                        <button type="button" class="btn btn-danger remove-row" data-nomination_cat_code="@Model[i].NominationCategoryCode">-</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            if (!string.IsNullOrEmpty(Model[i].FamilyDetails[j].guardian_name))
+                            {
+                                <tr class="guardianRow percTr12" data-index="@index">
+                                    @* Removed "hidden" class *@
+                                    <td></td>
+                                    <td>
+
+                                        <input type="text" class="form-control" value="@Model[i].FamilyDetails[j].guardian_name" disabled />
+                                    </td>
+
+                                </tr>
+                            }
+                            index++;
+                        }
+                        else
+                        {
+                            bool isRemovePd = Model[i].FamilyDetails[j].pd_is_active != "Y";
+                            bool isRemovePerc = Model[i].FamilyDetails[j].perc_is_active != "Y";
+                            string title = isRemovePd == true && isRemovePerc == true ? "Nominee name has been removed." : "Percentage has been removed";
+
+                            <tr style="background-color:lightcoral;" title="@title">
+                                <td>@index</td>
+                                <td>
+                                    <select class="form-control nominee-name" data-id="@Model[i].FamilyDetails[j].FamilyId" disabled>
+                                        <option value="">Select</option>
+                                        @foreach (var familyMember in Model[i].FamilyDetails)
+                                        {
+                                            //if (familyMember.pd_is_active == "Y")
+                                            //{
+                                            var fullName = $"{familyMember.FullName}".Trim();
+                                            var selected = Model[i].FamilyDetails[j].FamilyId == familyMember.FamilyId ? "selected" : "";
+                                            <option value="@familyMember.FamilyId|@familyMember.RelationshipCode" @selected>@fullName (@familyMember.RelationshipName)</option>
+                                            //}
+                                        }
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control percentage-input" value="@(Model[i].FamilyDetails[j].ShareOfPercentage.HasValue ? Model[i].FamilyDetails[j].ShareOfPercentage.Value.ToString("0.##") + "%" : "0%")" disabled />
+                                </td>
+                                <td>
+                                    <div class="text-center" id="textdis">
+                                        @*<button type="button" class="btn btn-success add-row" style="margin-left:10px" data-nomination_cat_code="@Model[i].NominationCategoryCode">+</button> &nbsp;&nbsp;&nbsp;&nbsp;*@
+                                        <button type="button" class="btn btn-danger remove-row" style="pointer-events: none; cursor: default;" data-nomination_cat_code="@Model[i].NominationCategoryCode" disabled>-</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            index++;
+
+                        }
+                    }
+
+
+                }
+
+                if (Model[i].FamilyDetails[0].ShareOfPercentage.HasValue == false && Model.Count() > 0 && hasPercentageParent == false)
+                {
+
+                    <tr class="percTr">
+                        <td class="srNo">1</td>
+                        <td>
+                            <select class="form-control nominee-name">
+                                <option value="">Select</option>
+                                @foreach (var familyMember in Model[i].FamilyDetails)
+                                {
+                                    if (familyMember.pd_is_active == "Y")
+                                    {
+                                        var fullName = $"{familyMember.FullName}".Trim();
+                                        //var selected = Model[i].FamilyDetails[j].FamilyId == familyMember.FamilyId ? "selected" : "";
+                                        <option value="@familyMember.FamilyId|@familyMember.RelationshipCode" data-age="@familyMember.DateOfBirth.ToString("yyyy-MM-dd")">@fullName (@familyMember.RelationshipName)</option>
+                                    }
+                                }
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control percentage-input" value="0%" />
+                        </td>
+                        <td>
+                            <div class="d-flex" id="textdis">
+                                @*<button type="button" class="btn btn-success add-row" style="margin-left:10px" data-nomination_cat_code="@Model[i].NominationCategoryCode">+</button> &nbsp;&nbsp;&nbsp;&nbsp;*@
+                                <button type="button" class="btn btn-danger remove-row" data-nomination_cat_code="@Model[i].NominationCategoryCode">-</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="guardianRow hidden percTr">
+                        <td></td>
+                        <td>
+                            @*<label>Guardian Name:</label>*@
+                            <input type="text" class="form-control" id="guardian-name" placeholder="Enter Guardian Name" required />
+                        </td>
+                    </tr>
+                }
+
+            }
+        }
+    </tbody>
+</table>
+<br />
+<hr style="border : 1px solid" />
+<br />
+
+<tfoot id="tfootBody">
+
+    <tr id="total">
+        <td id="totalpercentage"><strong>Total:</strong> <span id="total-percentage"> </span></td>
+        <td></td>
+        <td></td>
+        <td align="right">
+            <button type="button" class="btn btn-success add-row" style="float:right;" data-nomination_cat_code="">Add Nominee</button>
+        </td>
+    </tr>
+    <br />
+    <br />
+    <tr id="error">
+        <td colspan="5">
+
+            <div class="alert alert-danger total-percentage-alert" style="display:none;">Total Percentage of Sharing must be 100%.</div>
+            <div><strong>Remaining Percentage: </strong><span class="remaining-percentage"></span></div>
+
+        </td>
+    </tr>
+</tfoot>
+
+
+<script>
+
+
+
+    function getAge(dob) {
+        var diffMs = Date.now() - dob.getTime();
+        var ageDate = new Date(diffMs);
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+
+
+    $(document).on("change", ".nominee-name", function () {
+        var nomineeName = $(this).val();
+        var currentRow = $(this).closest('tr'); // Get the current row
+        var currentRowIndex = currentRow.index(); // Get the index of the current row
+        debugger
+        // Check if the current row is the first row
+        if (currentRowIndex === 0) {
+            console.log("Skipping comparison for the first row");
+            return; // Do not check for duplicates in the first row
+        }
+
+        var tableBody = $('#nominee-table-body');
+
+        // Get all nominee names except the current row's nominee name
+        var existingNomineeNames = [];
+        tableBody.find('tr.percTr').each(function (index) {
+            if (index !== currentRowIndex) { // Skip the current row for comparison
+                var name = $(this).find('.nominee-name').val(); // Assuming this is the class for nominee name
+                if (name) {
+                    existingNomineeNames.push(name);
+                }
+            }
+        });
+
+        // Check if the current nominee name already exists in the other rows
+        var hasDup = existingNomineeNames.includes(nomineeName);
+        console.log("Nominee name selected: ", nomineeName);
+        console.log("Existing nominee names: ", existingNomineeNames);
+        console.log("hasDup: ", hasDup);
+
+        if (hasDup) {
+            alert('This nominee has already been selected. Please select a different nominee.');
+            $(this).val(''); // Optionally clear the input
+            return;
+        }
+    });
+
+
+
+
+    var isDataUpdated = false;
+    var total = 0;
+    var collectedData = [];
+
+     var modelTotal = '@totalpercentage';
+    $(document).ready(function () {
+        $('.add-row').prop('disabled', true);
+        console.log((parseInt(modelTotal) == 100));
+        $("#total-percentage").text(parseInt(modelTotal));
+        $(".remaining-percentage").text((100 - modelTotal));
+        updateButtonVisibility();
+        $('.add-row').prop('disabled', (parseInt(modelTotal) == 100));
+    });
+
+    function setEditMode(editMode) {
+        isEditMode = editMode;
+        updateButtonVisibility();
+    }
+
+    $(document).on("keyup", ".percentage-input", function () {
+        isDataUpdated = true; // Set flag to true when data is modified
+        recalculateTotalPercentage();
+    });
+
+    function recalculateTotalPercentage() {
+        var totalPerc = 0;
+
+        $("tr.percTr .percentage-input").each(function () {
+            var percentage = parseFloat($(this).val()) || 0;
+            totalPerc += percentage;
+        });
+
+        total = totalPerc; // Update the global total variable
+        $("#total-percentage").text(total + '%');
+        $(".remaining-percentage").text((100 - total) + '%');
+
+        if (total > 100) {
+            $(".total-percentage-alert").show();
+        } else {
+            $(".total-percentage-alert").hide();
+        }
+
+        updateButtonVisibility();
+    }
+
+    function updateButtonVisibility() {
+        $('#submit-button').hide();
+
+        if (isDataUpdated && total === 100) {
+            $('#submit-button').show();
+        }
+
+        $('.add-row').prop('disabled', total === 100);
+
+        $('#nominee-table-body tr.percTr').each(function (index, row) {
+            var removeButton = $(row).find('.remove-row');
+            removeButton.prop('disabled', index === 0);
+        });
+    }
+
+    $(document).on('click', '.add-row', function () {
+        debugger
+        var tableBody = $('#nominee-table-body');
+        var firstRow = tableBody.find('tr.percTr').first();
+
+
+        var nomineeName = firstRow.find('.nominee-name option:selected').val();
+        var percentage = parseFloat(firstRow.find('.percentage-input').val()) || 0;
+        debugger
+        if (!nomineeName || isNaN(percentage) || percentage <= 0) {
+            alert('Please fill in all fields correctly.');
+            return;
+        }
+
+        if (total === 100) {
+            alert('Total percentage of sharing has reached 100%. No more rows can be added.');
+            return;
+        }
+
+        if (total > 100) {
+            $(".total-percentage-alert").show();
+            return;
+        } else {
+            $(".total-percentage-alert").hide();
+        }
+
+        //var nomineeArray = nomineeName.split("|");
+        //var familyId = nomineeArray[0];
+        //var relationshipCode = nomineeArray[1];
+
+        var rowCount = tableBody.find('tr.percTr').first().length;
+        var optionLength = tableBody.find('tr.percTr:first').find('select.nominee-name').find('option').length - 1;
+
+        if (rowCount < 5 && rowCount < optionLength) {
+            var newRow = firstRow.clone();
+            newRow.find('input').val('');
+            newRow.find('.percentage-input').val('');
+            newRow.find('.nominee-name').prop('selectedIndex', 0);
+            newRow.find('td:first').text(rowCount + 1);
+
+            tableBody.append(newRow);
+            recalculateTotalPercentage();
+        } else {
+            alert('You can only add up to 5 but you have only ' + optionLength + ' eligible members.');
+        }
+    });
+
+    $(document).on('click', '.remove-row', function () {
+        var row = $(this).closest('tr.percTr').first();
+        var nomineeName = row.find('.nominee-name').val();
+        var percentage = parseFloat(row.find('.percentage-input').val());
+
+        if (row.index() !== 0) {
+            let nomineeArray = nomineeName.split("|");
+            let familyId = nomineeArray[0];
+            let relationshipCode = nomineeArray[1];
+
+            collectedData.push({
+                'FamilyId': familyId,
+                'RelationshipCode': relationshipCode,
+                'percentage': percentage,
+                'flag': 'N'
+            });
+
+            row.remove();
+            updateRowNumbers();
+            recalculateTotalPercentage();
+        }
+    });
+
+
+
+    function updateRowNumbers() {
+        $('#nominee-table-body tr.percTr').each(function (index, row) {
+            $(row).find('td:first').text(index + 1);
+        });
+    }
+    function hasDuplicateNominee(nomineeName, currentIndex) {
+        var isDuplicate = false;
+
+        $('#nominee-table-body tr.percTr').each(function (index, row) {
+            // Check each row except the current row (for editing)
+            if (index !== currentIndex) {
+                var existingNomineeName = $(row).find('.nominee-name').val();
+                if (existingNomineeName === nomineeName) {
+                    isDuplicate = true;
+                    return false; // Break out of the each loop
+                }
+            }
+        });
+
+        if (isDuplicate) {
+             $('#nominee-table-body tr.percTr').eq(currentIndex).find('.nominee-name').val('');
+        }
+
+        return isDuplicate;
+    }
+    $(document).on('click', '#submit-button', function (e) {
+        e.preventDefault();
+        debugger;
+        var error = false;
+        var nominationId = $('#nominationCatCode').val();
+        var guardianName = $('#guardian-name').val();
+        if (!nominationId) {
+            alert('Please select a Nomination Type.');
+            error = true;
+            return;
+        }
+
+        var uniqueNominees = new Set();
+
+        $('#nominee-table-body').find('tr.percTr').each(function () {
+            debugger
+            var nomineeName = $(this).find('.nominee-name').val();
+            var percentage = parseFloat($(this).find('.percentage-input').val());
+
+            if (nomineeName && percentage) {
+                if (uniqueNominees.has(nomineeName)) {
+                    alert('Duplicate nominee found: ' + nomineeName);
+                    error = true;
+                    return false;
+                }
+                uniqueNominees.add(nomineeName);
+
+                var nomineeArray = nomineeName.split("|");
+                var familyId = nomineeArray[0];
+                var relationshipCode = nomineeArray[1];
+
+                collectedData.push({
+                    'FamilyId': familyId,
+                    'RelationshipCode': relationshipCode,
+                    'percentage': percentage,
+                    'flag': 'Y'
+                });
+            }
+        });
+
+        if (total !== 100) {
+            alert("Percentage must be 100%");
+            error = true;
+            return;
+        }
+        debugger
+        if (collectedData.length === 0) {
+            alert('Please add at least one nominee.');
+            error = true;
+            return;
+        }
+
+        if (!error) {
+            var postData = {
+
+                'nominationid': nominationId,
+                'guardianName': guardianName,
+                'Entries': collectedData
+            };
+
+            console.log("Post Data Entries:", postData.Entries);
+
+
+            $.ajax({
+                url: '/NomineDetails/Submit',
+                type: 'POST',
+                data: JSON.stringify(postData),
+                contentType: 'application/json; charset=utf-8',
+                success: function (response) {
+                    alert('Nominee details submitted successfully!');
+                    setEditMode(true);
+                    window.location.reload();
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error: " + error);
+                    alert('Failed to submit nominee details.');
+                }
+            });
+        }
+    });
+
+</script>

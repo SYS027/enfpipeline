@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="bg-white p-3">
+    <div class="row pt-2 pb-2">
+        <div class="col-md-12">
+            <h3><b> Subsidiary Dead Stock List</b></h3>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class=" col-md-12 text-end"> <a href="/SubsidiaryDeadStock/Item/0" class="btn btn-primary plusbut float-right ml-1">+</a></div>
+    </div>
+    <div ng-controller="SubsidiaryDeadStockList">
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div class="overflow-auto">
+                    <table class="table table-hover table-bordered" id="table_id">
+                        <thead>
+                            <tr class="bg-primary text-white text-center">
+                                <th scope="col">SrNo.</th>
+                                <th scope="col">Asset Type</th>
+                                <th scope="col">Asset No.</th>
+                                <th scope="col">Asset Description</th>
+                                <th scope="col">Date Of Issued</th>
+                                <th scope="col">Cost Of Asset( Rs.)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center" ng-repeat="item in list_of_subsidiaryStock">
+                                <td><a href="/SubsidiaryDeadStock/Item/{{item.id}}">{{$index+1}}</a></td>
+                                <td>{{item.uti_asset_type}}</td>
+                                <td>{{item.uti_asset_no}} </td>
+                                <td>{{item.descr100}}</td>
+                                <td>{{item.uti_doi | date:'dd-MMM-yyyy'}}</td>
+                                <td>{{item.uti_asset_cost}}</td>
+                                <td><button type="submit" class="btn btn-danger" ng-click="delete(item.id)">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

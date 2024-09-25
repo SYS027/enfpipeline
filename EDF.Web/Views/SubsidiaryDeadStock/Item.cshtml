@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Subsidiary Dead Stock";
+}
+<style>
+    .loader {
+        position: fixed;
+        z-index: 1000001;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /*background: white;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: rotate;
+        animation-iteration-count: infinite;
+        /*animation-duration: 1.6s;*/
+    }
+
+
+        .loader > img {
+            width: 300px;
+            height: 200px;
+        }
+
+
+    .center {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+</style>
+<div class="bg-white p-3 border" ng-app="myApp" ng-controller="SubsidiaryDeadStock">
+    <div class="row pt-2 pb-2">
+        <div class="col-md-12">
+            <h3><b>Add Subsidiary Dead Stock</b></h3>
+            <hr>
+        </div>
+    </div>
+    <br />
+    <form>
+        <div class="row mt-2 small">
+            <div class="form-group col-md-4">
+                <label>Assets No. </label>
+                <input type="text" class="form-control" ng-model="model.uti_asset_no" disabled/>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Assets Type </label>
+                <select class="form-select" ng-model="model.uti_asset_type" ng-options="item.ID as item.Name for item in asset_types"></select>
+            </div>
+            <div class="form-group col-md-12">
+                <label>Assets Description </label>
+                <input type="text" class="form-control" ng-model="model.descr100" />
+            </div>
+        </div>
+        <div class="row mt-2 small">
+            <div class="form-group col-md-4">
+                <label>Date Of Issue </label>
+                <input type="date" class="form-control" ng-model="model.uti_doi" />
+            </div>
+
+            <div class="form-group col-md-4">
+                <label>Cost Of Asset (Rs.) </label>
+                <input type="text" class="form-control" ng-model="model.uti_asset_cost"/>
+
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="form-group col-md-3">
+                <button type="button" class="btn btn-primary w-100"
+                        ng-click="save()">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

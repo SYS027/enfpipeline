@@ -1,0 +1,304 @@
+﻿@model List<EDF.Web.Models.EmployeeFullDetail>
+
+@{
+    ViewBag.Title = "Family Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*@{ var familyMember = ViewBag.familyMemberDetails; }*@
+<!--<div class="row mb-3">-->
+    <!-- Header for Nominee Details -->
+    <!--<div class="col-md-12">
+        <h3 class="text-center mt-3">Nominee Details</h3>
+    </div>
+</div>-->
+
+<div class="row pt-2 pb-2">
+    <div class="col-md-12">
+        <h4><b>Nominee Details</b></h4>
+        <hr>
+    </div>
+</div>
+
+<!--<div class="container mt-4">
+    <div class="row">-->
+        <!-- Employee Details Section -->
+        <!--<div class="col-md-12 md-6">
+            <p><strong>Employee Id:</strong> 1401</p>
+            <p><strong>Name of Employee:</strong> Anurudh Shrivastava</p>
+            <p><strong>Designation:</strong> Web Developer</p>
+        </div>
+    </div>
+</div>-->
+<form class="pb-lg-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+             
+                <div class="mb-3">
+                    <p>You can Nominate only 5 members for Nomination Category</p>
+                    <b>Nomination Module</b>
+                </div>
+
+                <div class="accordion mt-4" id="accordion">
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-@Model[i].NominationCategoryCode">
+                                        @Model[i].NominationCategoryName
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapse-@Model[i].NominationCategoryCode" class="collapse @(Model[i].FamilyDetails[0].ShareOfPercentage.HasValue ? "show" : "")" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No.</th>
+                                                    <th>Name Of PF Nominee</th>
+                                                    <th>Percentage of Sharing</th>
+                                                    <th>Add/Remove</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="nominee-table-body-@Model[i].NominationCategoryCode">
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>
+                                                        <select class="form-control nominee-name">
+                                                            <option value="">Select</option>
+                                                            @foreach (var familyMember in Model[i].FamilyDetails)
+                                                            {
+                                                                var fullName = $"{familyMember.FullName}".Trim();
+                                                                <option value="@familyMember.FamilyId" data-relationship-code="@familyMember.RelationshipCode">
+                                                                    @fullName (@familyMember.RelationshipName)
+                                                                </option>
+                                                            }
+                                                        </select>
+                                                    </td>
+
+                                                    <td>
+                                                        <input type="text" class="form-control percentage-input" value="0%" />
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-between">
+                                                            <button type="button" class="btn btn-success add-row" data-id="@Model[i].NominationCategoryCode">+</button>
+                                                            <button type="button" class="btn btn-danger remove-row" data-id="@Model[i].NominationCategoryCode">-</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="2"></td>
+                                                    <td><strong>Total:</strong> <span class="total-percentage">0%</span></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <div class="alert alert-danger total-percentage-alert mt-2" style="display:none;">Total Percentage of Sharing must be 100%.</div>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button type="button" id="submit-button" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+
+
+
+<script>
+    $(document).ready(function () {
+        function collectFormData() {
+            var modelData = [];
+            var allValid = true;
+
+            $('tbody[id^="nominee-table-body-"]').each(function () {
+                var categoryId = $(this).attr('id').replace('nominee-table-body-', '');
+                var categoryName = $(this).closest('.card').find('.card-header button').text().trim();
+                var categoryEntries = [];
+
+                $(this).find('tr').each(function () {
+                    var selectedOption = $(this).find('.nominee-name option:selected');
+                    var nomineeName = selectedOption.val();
+                    var relationshipCode = selectedOption.data('relationship-code');
+                    var percentage = parseFloat($(this).find('.percentage-input').val().replace('%', ''));
+
+                    // Validation for empty fields
+                    if (!nomineeName) {
+                        $(this).find('.nominee-name').addClass('is-invalid');
+                        allValid = false;
+                    } else {
+                        $(this).find('.nominee-name').removeClass('is-invalid');
+                    }
+
+                    if (isNaN(percentage) || percentage <= 0) {
+                        $(this).find('.percentage-input').addClass('is-invalid');
+                        allValid = false;
+                    } else {
+                        $(this).find('.percentage-input').removeClass('is-invalid');
+                    }
+
+                    categoryEntries.push({
+                        FamilyId: nomineeName,
+                        RelationshipCode: relationshipCode,
+                        Percentage: percentage
+                    });
+                });
+
+                modelData.push({
+                    NominationId: categoryId,
+                    NominationCategoryName: categoryName,
+                    Entries: categoryEntries
+                });
+            });
+
+            if (!allValid) {
+                alert('Please fill all required fields correctly.');
+            }
+
+            return allValid ? modelData : null;
+        }
+
+        function updateTotalPercentage(categoryId) {
+            var tableBody = $('#nominee-table-body-' + categoryId);
+            var totalPercentage = calculateTotalPercentage(tableBody);
+
+            tableBody.closest('.card-body').find('.total-percentage').text(totalPercentage + '%');
+            tableBody.closest('.card-body').find('.total-percentage-alert').toggle(totalPercentage !== 100);
+        }
+
+        function calculateTotalPercentage(tableBody) {
+            var totalPercentage = 0;
+            tableBody.find('tr').each(function () {
+                var percentage = parseFloat($(this).find('.percentage-input').val().replace('%', ''));
+                if (!isNaN(percentage)) {
+                    totalPercentage += percentage;
+                }
+            });
+            return totalPercentage;
+        }
+
+        function hasDuplicateNominees(tableBody) {
+            var nominees = [];
+            var hasDuplicates = false;
+
+            tableBody.find('tr').each(function () {
+                var nomineeName = $(this).find('.nominee-name option:selected').text().trim();
+                if (nomineeName) {
+                    if (nominees.includes(nomineeName)) {
+                        hasDuplicates = true;
+                    }
+                    nominees.push(nomineeName);
+                }
+            });
+
+            return hasDuplicates;
+        }
+
+        $(document).on('click', '.add-row', function () {
+            var categoryId = $(this).data('id');
+            var tableBody = $('#nominee-table-body-' + categoryId);
+            var lastRow = tableBody.find('tr').last();
+            var nomineeName = lastRow.find('.nominee-name option:selected').val();
+            var percentage = parseFloat(lastRow.find('.percentage-input').val().replace('%', ''));
+
+            // Check if the current row is filled correctly
+            if (!nomineeName || isNaN(percentage) || percentage <= 0) {
+                alert('Please fill the current row before adding a new one.');
+                return;
+            }
+
+            // Calculate the total percentage before adding a new row
+            var totalPercentage = calculateTotalPercentage(tableBody);
+
+            // Prevent adding a new row if the total percentage is 100 or more
+            if (totalPercentage >= 100) {
+                alert('Total percentage of sharing has reached 100%. No more rows can be added.');
+                return;
+            }
+
+            // Check the maximum number of rows allowed (up to 5 rows)
+            var rowCount = tableBody.find('tr').length;
+            if (rowCount < 5) {
+                var newRow = lastRow.clone();
+                newRow.find('input').val('');
+                newRow.find('.percentage-input').val('0%');
+                newRow.find('.nominee-name').prop('selectedIndex', 0);
+                newRow.find('td:first').text(rowCount + 1);
+                tableBody.append(newRow);
+                updateTotalPercentage(categoryId);
+            } else {
+                alert('You can only add up to 5 members.');
+            }
+        });
+
+        $('#submit-button').click(function (event) {
+            var isValid = true;
+
+            $('.nominee-table-body').each(function () {
+                var tableBody = $(this);
+                var totalPercentage = calculateTotalPercentage(tableBody);
+
+                if (totalPercentage > 100) {
+                    isValid = false;
+                    alert('Total percentage of sharing exceeds 100%. Please adjust the percentages.');
+                    return false; // Exit the loop if any table is invalid
+                }
+
+                if (hasDuplicateNominees(tableBody)) {
+                    isValid = false;
+                    alert('Duplicate nominees found. Each nominee must be unique.');
+                    return false; // Exit the loop if any table is invalid
+                }
+            });
+
+            if (!isValid) {
+                event.preventDefault();
+                return false;
+            }
+
+            var formData = collectFormData();
+            if (!formData) return;
+
+            $.ajax({
+                url: '/NomineDetails/Submit',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function (response) {
+                    console.log(response);
+                    alert('Data submitted successfully!');
+                    window.location.reload();
+                },
+                error: function (xhr) {
+                    console.error(xhr.responseText);
+                    alert('An error occurred while submitting data.');
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+

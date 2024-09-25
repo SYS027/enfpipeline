@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "AuditReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover {
+        background-color: #0d6efd;
+    }
+
+    .bootstrap-select > .dropdown-toggle {
+        border: 1px solid #ccc;
+    }
+
+    .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+        color: #555;
+    }
+
+    .bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+        background-color: white;
+    }
+</style>
+
+<header><h4><b>Audit Report</b></h4></header>
+<hr>
+<div class="row m-0">
+    <div class="row">
+        <div class="col-md-3 mt-3">
+            <label for="">From Date</label>
+            <input type="date" id="fromDate" class="form-control">
+        </div>
+        <div class="col-md-3 mt-3">
+            <label for="">To Date</label>
+            <input type="date" id="toDate" class="form-control">
+        </div>
+        <div class="col-md-3 mt-3">
+            <label for="employeeCodeSearch">Employee</label>
+
+            <select class="selectpicker form-control" data-live-search="true" id="employeeCodeSearch">
+                <option value="">Select</option>-->
+                @*@foreach (var item in ViewBag.EmpName)
+                {
+                    <option value="@item.employeecode">@item.employeename, @item.employeecode</option>
+                }*@
+            </select>
+        </div>
+        <div class="col-md-3 mt-3">
+            <label for="">Nomination Type</label>
+            <select id="search_nomination_type" class="form-select">
+                <option value="">Select</option>-->
+                @*@foreach (var item in ViewBag.NominationCategory)
+                {
+                    <option value="@item.nomination_category_code"> @item.nomination_category_name</option>
+                }*@
+
+            </select>
+        </div>   
+
+    </div>
+    <div class="row">
+        <div class="col-md-12 mt-3" style="text-align:right;">
+            <button class="btn btn-primary" id="btnSearch">Search</button>
+            <button class="btn btn-secondary" id="btnClear">Clear</button>
+            @*<button class="btn btn-success" id="btnExportExcel">Export to Excel</button>*@
+        </div>
+
+    </div>
+</div>
+
+
+<div class="table-responsive mt-5" style="border: 1px solid #ccc; padding: 1%;">
+    <table class="table" id="auditreport" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th scope="col">S.No.</th>
+                <th scope="col">Employee Code</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Nomination Type</th>
+                <th scope="col">Family Member Name</th>
+                <th scope="col">Old Share of Percentage</th>
+                <th scope="col">New Share of Percentage</th>
+                @*<th scope="col">Family Member Name</th>
+                  <th scope="col">Relation With Employee</th>*@
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                int serialNumber = 1;
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@serialNumber</td>
+                        <td>@item.employeecode</td>
+                        <td>@item.employeename</td>
+                        <td>@item.nomination_type</td>
+                        <td>@item.first_name @item.last_name</td>
+                        <td>@item.old_share_of_percentage</td>
+                        <td>@item.new_share_of_percentage</td>
+                    </tr>
+                    serialNumber++;
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7"><center>No records found.</center></td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+

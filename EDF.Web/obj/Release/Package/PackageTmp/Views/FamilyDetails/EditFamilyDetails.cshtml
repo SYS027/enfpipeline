@@ -1,0 +1,494 @@
+﻿@{
+    ViewBag.Title = "EditFamilyDetails";
+}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<style>
+    /* h6 {
+        width: 70%;
+        text-align: center;
+        margin: auto;
+    } */
+
+    .tbl {
+        width: 100%;
+    }
+
+    .tbl,
+    th,
+    td {
+        white-space: nowrap;
+        padding: 10px;
+    }
+
+        .tbl th,
+        .tbl td {
+            white-space: nowrap;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+    .checkstyle {
+        background: #fff;
+        position: absolute;
+        z-index: 1000;
+        width: 100%;
+        display: none;
+    }
+
+    .overSelect {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+</style>
+
+<div class="row">
+
+    <article class="col-md-12">
+        <div class="row"> </div>
+
+        <div class="row">
+            @*<div class="col-md-1"></div>*@
+            <div class="col-md-12 mt-3">
+
+                <div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="data:D:\Kiran_cylsys\Medical R Project\Project1\MedicalR\Includes\img;base64,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" />
+                        </div>
+                        <div class="col-md-5"><h3 class="ml-5 mt-3">Update Family Details </h3></div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    <hr>
+                </div>
+                <form class="p-3 ">
+                    <div class="row">
+                        <div class="d-none">
+                            <label>EmployeeId</label>
+                            <input type="text" value="@ViewBag.EmployeeID" id="empID" readonly />
+                        </div>
+                        <div class="d-none">
+                            <label>EmployeeCode</label>
+                            <input type="text" value="@ViewBag.employeecode" id="empCode" readonly />
+                        </div>
+                        <div class="d-none">
+                            <label>FamilyId</label>
+                            <input type="text" value="@Model.family_id" id="familyID" readonly />
+                        </div>
+                        <div class="form-group col-md-4 mt-1">
+                            <label for="">Name of Family Member <span class="text-danger">*</span></label>
+                            <input type="Text" class="form-control" id="familyMemberName" value="@Model.first_name @Model.last_name"
+                                   placeholder="Enter Name Of Family Member">
+                            <span class="text-danger" id="familyMemberNameError"></span>
+                        </div>
+                        <div class="form-group col-md-4 mt-1">
+                            <label for="">Relationship Type <span class="text-danger">*</span></label>
+                            <select class="form-control" id="relationshipType">
+                                <option>Select</option>
+                                @foreach (var item in ViewBag.relation)
+                                {
+                                    <option value="@item.Value" @(item.Value == Model.relationship_code ? "selected" : "")> @item.Text</option>
+                                }
+                            </select>
+                            <span class="text-danger" id="relationshipTypeError"></span>
+                        </div>
+
+                        <div class="form-group col-md-4 mt-1">
+                            <label for="">Gender <span class="text-danger">*</span></label>
+                            <select class="form-control" id="gender">
+                                <option>Select</option>
+                                <option value="M" @(Model.gender == "M" ? "selected" : "")>Male</option>
+                                <option value="F" @(Model.gender == "F" ? "selected" : "")>Female</option>
+                            </select>
+                            <span class="text-danger" id="genderError"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="dob">Date Of Birth <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" id="dob" value="@Model.date_of_birth.ToString("yyyy-MM-dd")" placeholder="Date Of Birth" onchange="calculateAge()">
+                            <span class="text-danger" id="dobError"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="age">Age <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" placeholder="Age" id="age" value="@Model.age" readonly>
+
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">
+                                Contact Number <span class="text-danger">*</span>
+                            </label>
+                            <input type="number" class="form-control" id="contactno" placeholder="Contact Number" value="@Model.contact_no">
+                            <span class="text-danger" id="contactnoError"></span>
+                        </div>
+
+                        <div class="form-group col-md-4 mt-1">
+                            <label for="">
+                                Email ID<span class="text-danger">*</span>
+                            </label>
+                            <input type="email" class="form-control" id="emailid" placeholder="Email ID" value="@Model.email_id">
+                            <span class="text-danger" id="emailidError"></span>
+                        </div>
+
+                        <div class="form-group col-md-4 ">
+                            <label for="">
+                                Qualification<span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control" id="qualification" placeholder="Qualification " value="@Model.qualification">
+                            <span class="text-danger" id="qualificationError"></span>
+                        </div>
+                        <div class="form-group col-md-4 ">
+                            <label for="">
+                                Annual Income<span class="text-danger">*</span>
+                            </label>
+                            <input type="number" class="form-control" id="annualincome" placeholder="Annual Income" value="@Model.annual_income">
+                            <span class="text-danger" id="annualincomeError"></span>
+                        </div>
+                        <div class="form-group col-md-4 mt-2">
+                            <input type="checkbox" id="isemployeed"
+                                   value="true"
+                                   @(Model.is_employeed ? "checked" : "") />
+                            <label for="isemployeed">Is Employeed</label>
+                        </div>
+                        <div class="form-group col-md-4 mt-2">
+                            <input type="checkbox" id="isDependent"
+                                   value="true"
+                                   @(Model.is_dependent ? "checked" : "") />
+                            <label for="isDependent">Is Dependent</label>
+                        </div>
+                       
+                        @*<div class="form-group col-md-4 ">
+            <label for="">
+                IFSC Code <span class="text-danger">*</span>
+            </label>
+            <input type="text" class="form-control" id="ifsccode" placeholder="IFSC Code" value="@Model.bank_ifsc">
+            <span class="text-danger" id="ifsccodeError"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="bank">Bank<span class="text-danger">*</span></label>
+            <select class="form-control" id="bank" name="BankId">
+                <option>Select</option>
+                @foreach (var item in ViewBag.banklst)
+                {
+                    <option value="@item.Value" @(item.Text.Trim().Equals(Model.bank_account_name?.Trim(), StringComparison.OrdinalIgnoreCase) ? "selected" : "")>
+                        @item.Text
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="form-group col-md-4 ">
+            <label for="">
+                Bank Account Number <span class="text-danger">*</span>
+            </label>
+            <input type="number" class="form-control" id="accountno" placeholder="Bank A/c No." value="@Model.bank_account_number">
+            <span class="text-danger" id="accountnoError"></span>
+        </div>*@
+
+                        <hr>
+                        <h4>Address</h4>
+                        @*<Span>
+            <input type="checkbox" id="same" name="same" onchange="addressFunction()" />
+            Same as Family Details
+        </Span>*@
+                        @*<div class="form-group">
+            <input type="checkbox" id="sameAsFamilyDetails" />
+            <label for="sameAsFamilyDetails">Same as Employee</label>
+        </div>*@
+                        <div class="form-group">
+                            <input type="checkbox" id="sameAsFamilyDetails"
+                                   @(ViewBag.IsSameAddress ? "checked" : "") />
+                            <label for="sameAsFamilyDetails">Same as Employee</label>
+                        </div>
+
+                        <div class="form-group col-md-4 mt-2">
+                            <label for="">Country <span class="text-danger">*</span></label>
+                            <select class="form-control" onchange="get_state(this.value)" id="categorycountry" name="CountryId">
+                                <option>Select</option>
+                                @foreach (var item in ViewBag.Country)
+                                {
+                                    <option value="@item.Value" @(item.Value == Model.country_id.ToString() ? "selected" : "")>@item.Text</option>
+                                }
+                            </select>
+                            <span class="text-danger" id="categorycountryError"></span>
+                        </div>
+                        <div class="form-group col-md-4 mt-2">
+                            <label for="">State <span class="text-danger">*</span></label>
+                            <select class="form-control" id="categorystate" name="StateId" onchange="get_city(this.value)">
+                                <option>Select</option>
+                                @foreach (var item in ViewBag.State)
+                                {
+                                    <option value="@item.Value" @(item.Value == Model.state_id.ToString() ? "selected" : "")>@item.Text</option>
+                                }
+                            </select>
+                            <span class="text-danger" id="categorystateError"></span>
+                        </div>
+                        <div class=" col-md-4 mt-2">
+                            <label for="">
+                                City <span class="text-danger">*</span>
+                            </label>
+                            <select class="form-control" id="categorycity" name="CityId">
+                                <option>Select</option>
+                                @foreach (var item in ViewBag.City)
+                                {
+                                    <option value="@item.Value" @(item.Value == Model.city_id.ToString() ? "selected" : "")>@item.Text</option>
+                                }
+                            </select>
+                            <span class="text-danger" id="categorycityError"></span>
+                        </div>
+
+                        <div class="form-group col-md-4 ">
+                            <label for="">
+                                PIN Code <span class="text-danger">*</span>
+                            </label>
+                            <input type="number" class="form-control" name="Pin code" id="pincode" value="@Model.pin_code"
+                                   pattern="[0-9]{6}" required /><br />
+                            <span class="text-danger" id="pincodeError"></span>
+                        </div>
+                        <div class=" col-md-5 form-group  ">
+
+                            <label for=""> Address<span class="text-danger">*</span></label>
+                            <textarea name="" class="form-control" id="address">@Model.address</textarea>
+                            <span class="text-danger" id="addressError"></span>
+                        </div>
+
+
+
+                        <div class="col-md-1"></div>
+                        <div class="col-md-3 mt-2">
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-9"></div>
+                            <div class="col-md-3">
+                                <button id="btnUpdate" class="btn btn-primary">Submit</button>
+                                @*<button id="cancelAdd" class="btn btn-primary">Cancel</button>*@
+                                <a href="@Url.Action("Index", "FamilyDetails")" class="btn btn-primary">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </article>
+</div>
+
+
+
+
+
+<script>
+    // Function to fetch and populate states based on selected country
+    function get_state(id) {
+        console.log("Selected country ID:", id);
+        $.ajax({
+            url: "/FamilyDetails/statefilter?id=" + id,
+            type: "POST",
+            success: function (data) {
+                var categ = $("#categorystate").html("");
+                categ.append('<option value="">Select</option>');
+                if (data != null && data != undefined) {
+                    $.each(data, function (i, state) {
+                        categ.append("<option value='" + state.state_id + "'>" + state.state_name + "</option>");
+                    });
+                }
+                // Set the selected state if a state ID is present in the model
+                const selectedStateId = "@(Model.state_id ?? "")";
+                if (selectedStateId) {
+                    $("#categorystate").val(selectedStateId).change();
+                }
+            },
+            error: function (err) {
+                console.error(err.message);
+            }
+        });
+    }
+
+    // Function to fetch and populate cities based on selected state
+    function get_city(id) {
+        console.log("Selected state ID:", id);
+        $.ajax({
+            url: "/FamilyDetails/cityfilter?id=" + id,
+            type: "POST",
+            success: function (data) {
+                var categ = $("#categorycity").html("");
+                categ.append('<option value="">Select</option>');
+                if (data != null && data != undefined) {
+                    $.each(data, function (i, city) {
+                        categ.append("<option value='" + city.city_id + "'>" + city.city_name + "</option>");
+                    });
+                }
+                // Set the selected city if a city ID is present in the model
+                const selectedCityId = "@(Model.city_id ?? "")";
+                if (selectedCityId) {
+                    $("#categorycity").val(selectedCityId);
+                }
+            },
+            error: function (err) {
+                console.error(err.message);
+            }
+        });
+    }
+
+    // On page load, trigger get_state if country is selected
+    $(document).ready(function () {
+        const selectedCountryId = "@(Model.country_id ?? "")";
+        if (selectedCountryId) {
+            get_state(selectedCountryId);
+        }
+
+        const selectedStateId = "@(Model.state_id ?? "")";
+        if (selectedStateId) {
+            get_city(selectedStateId);
+        }
+    });
+
+    $("#btnUpdate").click(function (e) {
+    e.preventDefault();
+
+    // Clear previous error messages
+    $(".text-danger").text("");
+
+    // Collect data from the form
+    var data = {
+        employee_id: $("#empID").val(),
+        employeecode: $("#empCode").val(),
+        family_id: $("#familyID").val(),
+        relationship_code: $("#relationshipType").val(),
+        first_name: $("#familyMemberName").val().split(' ')[0],
+        last_name: $("#familyMemberName").val().split(' ').slice(1).join(' '),
+        gender: $("#gender").val(),
+        date_of_birth: $("#dob").val(),
+        age: $("#age").val(),
+        contact_no: $("#contactno").val(),
+        email_id: $("#emailid").val(),
+        qualification: $("#qualification").val(),
+        annual_income: $("#annualincome").val(),
+        //bank_ifsc: $("#ifsccode").val(),
+        //bank_account_number: $("#accountno").val(),
+        //bank_account_name: $("#bank option:selected").text().trim(),
+        country_id: $("#categorycountry").val(),
+        state_id: $("#categorystate").val(),
+        city_id: $("#categorycity").val(),
+        pin_code: $("#pincode").val(),
+        address: $("#address").val(),
+        is_dependent: $("#isDependent").is(":checked"),
+        is_employeed: $("#isemployeed").is(":checked")
+    };
+
+    // Validation
+    var hasError = false;
+
+    if (data.relationship_code === "Select") {
+        $("#relationshipTypeError").text("Please select a relationship type.");
+        hasError = true;
+    }
+
+    if (data.first_name === "" || data.last_name === "") {
+        $("#familyMemberNameError").text("Please enter the full name of the family member.");
+        hasError = true;
+    }
+
+    if (data.gender === "Select") {
+        $("#genderError").text("Please select gender.");
+        hasError = true;
+    }
+
+    if (data.date_of_birth === "") {
+        $("#dobError").text("Please enter a valid date of birth.");
+        hasError = true;
+    }
+
+    if (data.contact_no === "") {
+        $("#contactnoError").text("Please enter a contact number.");
+        hasError = true;
+    }
+
+    if (data.email_id === "") {
+        $("#emailidError").text("Please enter a valid email address.");
+        hasError = true;
+    }
+
+    if (data.qualification === "") {
+        $("#qualificationError").text("Please enter the qualification.");
+        hasError = true;
+    }
+
+    if (data.annual_income === "") {
+        $("#annualincomeError").text("Please enter the annual income.");
+        hasError = true;
+    }
+
+    //if (data.bank_ifsc === "") {
+    //    $("#ifsccodeError").text("Please enter the IFSC code.");
+    //    hasError = true;
+    //}
+
+    //if (data.bank_account_number === "") {
+    //    $("#accountnoError").text("Please enter the bank account number.");
+    //    hasError = true;
+    //}
+
+    if (data.country_id === "Select") {
+        $("#categorycountryError").text("Please select a country.");
+        hasError = true;
+    }
+
+    if (data.state_id === "Select") {
+        $("#categorystateError").text("Please select a state.");
+        hasError = true;
+    }
+
+    if (data.city_id === "Select") {
+        $("#categorycityError").text("Please select a city.");
+        hasError = true;
+    }
+
+    if (data.pin_code === "") {
+        $("#pincodeError").text("Please enter a valid PIN code.");
+        hasError = true;
+    }
+
+    if (data.address === "") {
+        $("#addressError").text("Please enter the address.");
+        hasError = true;
+    }
+
+    // If no errors, submit the form via AJAX
+    if (!hasError) {
+        $.ajax({
+            url: '@Url.Action("UpdateFamilyDetails", "FamilyDetails")',
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json; charset=utf-8',
+            success: function (response) {
+                if (response.status) {
+                    alert(response.message);
+                    window.location.href = '@Url.Action("Index", "FamilyDetails")';
+                } else {
+                    alert("Error updating family details: " + response.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                alert("Error: " + error);
+            }
+        });
+    }
+});
+
+
+    // Function to calculate age based on the selected date of birth
+    function calculateAge() {
+        var dob = document.getElementById('dob').value;
+        if (dob) {
+            var dobDate = new Date(dob);
+            var diff = Date.now() - dobDate.getTime();
+            var ageDate = new Date(diff);
+            var age = Math.abs(ageDate.getUTCFullYear() - 1970);
+
+            document.getElementById('age').value = age;
+        }
+    }
+</script>
+
+
+

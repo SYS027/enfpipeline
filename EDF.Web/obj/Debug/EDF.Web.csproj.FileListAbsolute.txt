@@ -1,0 +1,416 @@
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\roslyn\csc.exe
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\roslyn\vbc.exe
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\roslyn\VBCSCompiler.exe
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\EDF.Web.dll.config
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\EDF.Web.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\EDF.Web.pdb
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Antlr3.Runtime.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\ClosedXML.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Dapper.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\DocumentFormat.OpenXml.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\EntityFramework.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\EntityFramework.SqlServer.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\EPPlus.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\ExcelNumberFormat.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\itextsharp.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\itextsharp.xmlworker.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Newtonsoft.Json.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Npgsql.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Owin.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Net.Http.Formatting.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Threading.Tasks.Extensions.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.ValueTuple.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Helpers.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Http.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Http.Owin.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Http.WebHost.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Mvc.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Optimization.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Razor.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.WebPages.Deployment.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.WebPages.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.WebPages.Razor.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\WebGrease.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\ClosedXML.pdb
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\ClosedXML.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Dapper.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\DocumentFormat.OpenXml.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\EPPlus.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\ExcelNumberFormat.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\itextsharp.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.IO.RecyclableMemoryStream.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Npgsql.pdb
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Npgsql.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Threading.Tasks.Extensions.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.ValueTuple.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Newtonsoft.Json.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Net.Http.Formatting.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Helpers.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Http.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Http.WebHost.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Mvc.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Optimization.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Razor.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.WebPages.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.WebPages.Deployment.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.WebPages.Razor.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Antlr3.Runtime.pdb
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\EntityFramework.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\EntityFramework.SqlServer.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\bin\System.Web.Http.Owin.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\obj\Debug\EDF.Web.csproj.AssemblyReference.cache
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\obj\Debug\EDF.Web.csproj.CoreCompileInputs.cache
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\obj\Debug\EDF.Web.csproj.CopyComplete
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\obj\Debug\EDF.Web.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\AMS\KCMS.Web\obj\Debug\EDF.Web.pdb
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\roslyn\csc.exe
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\roslyn\vbc.exe
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\roslyn\VBCSCompiler.exe
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\EDF.Web.dll.config
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\EDF.Web.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\EDF.Web.pdb
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Antlr3.Runtime.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\ClosedXML.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Dapper.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\DocumentFormat.OpenXml.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\EntityFramework.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\EntityFramework.SqlServer.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\EPPlus.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\ExcelNumberFormat.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\itextsharp.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\itextsharp.xmlworker.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Newtonsoft.Json.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Npgsql.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Owin.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Net.Http.Formatting.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Threading.Tasks.Extensions.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.ValueTuple.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Helpers.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Http.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Http.Owin.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Http.WebHost.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Mvc.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Optimization.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Razor.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.WebPages.Deployment.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.WebPages.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.WebPages.Razor.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\WebGrease.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\ClosedXML.pdb
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\ClosedXML.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Dapper.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\DocumentFormat.OpenXml.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\EPPlus.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\ExcelNumberFormat.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\itextsharp.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.IO.RecyclableMemoryStream.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Npgsql.pdb
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Npgsql.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Threading.Tasks.Extensions.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.ValueTuple.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Newtonsoft.Json.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Net.Http.Formatting.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Helpers.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Http.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Http.WebHost.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Mvc.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Optimization.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Razor.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.WebPages.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.WebPages.Deployment.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.WebPages.Razor.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Antlr3.Runtime.pdb
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\EntityFramework.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\EntityFramework.SqlServer.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\bin\System.Web.Http.Owin.xml
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\obj\Debug\EDF.Web.csproj.AssemblyReference.cache
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\obj\Debug\EDF.Web.csproj.CoreCompileInputs.cache
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\obj\Debug\EDF.Web.csproj.CopyComplete
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\obj\Debug\EDF.Web.dll
+C:\UTI AWS PROJ\Developemet\UTI_FORMS\EDF\EDF.Web\obj\Debug\EDF.Web.pdb
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\roslyn\csc.exe
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\roslyn\vbc.exe
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\EDF.Web.dll.config
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\EDF.Web.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\EDF.Web.pdb
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Antlr3.Runtime.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\ClosedXML.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Dapper.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\DocumentFormat.OpenXml.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\EntityFramework.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\EPPlus.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\ExcelNumberFormat.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\itextsharp.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\itextsharp.xmlworker.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Newtonsoft.Json.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Npgsql.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Owin.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.ValueTuple.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Helpers.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Http.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Http.Owin.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Mvc.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Optimization.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Razor.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.WebPages.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\WebGrease.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\ClosedXML.pdb
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\ClosedXML.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Dapper.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\DocumentFormat.OpenXml.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\EPPlus.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\ExcelNumberFormat.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\itextsharp.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Npgsql.pdb
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Npgsql.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.ValueTuple.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Newtonsoft.Json.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Helpers.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Http.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Mvc.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Optimization.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Razor.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.WebPages.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Antlr3.Runtime.pdb
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\EntityFramework.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\bin\System.Web.Http.Owin.xml
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\obj\Debug\EDF.Web.csproj.AssemblyReference.cache
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\obj\Debug\EDF.Web.csproj.CoreCompileInputs.cache
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\obj\Debug\EDF.Web.csproj.Up2Date
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\obj\Debug\EDF.Web.dll
+C:\Users\RADHE RADHE\Downloads\EDF (2)\EDF\EDF.Web\obj\Debug\EDF.Web.pdb
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\roslyn\csc.exe
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\roslyn\vbc.exe
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\roslyn\VBCSCompiler.exe
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\roslyn\VBCSCompiler.exe.config
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\EDF.Web.dll.config
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\EDF.Web.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\EDF.Web.pdb
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Antlr3.Runtime.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\ClosedXML.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Dapper.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\DocumentFormat.OpenXml.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\EntityFramework.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\EntityFramework.SqlServer.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\EPPlus.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\ExcelNumberFormat.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\itextsharp.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\itextsharp.xmlworker.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.IO.RecyclableMemoryStream.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Newtonsoft.Json.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Npgsql.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Owin.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Net.Http.Formatting.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Threading.Tasks.Extensions.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.ValueTuple.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Helpers.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Http.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Http.Owin.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Http.WebHost.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Mvc.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Optimization.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Razor.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.WebPages.Deployment.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.WebPages.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.WebPages.Razor.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\WebGrease.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\ClosedXML.pdb
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\ClosedXML.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Dapper.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\DocumentFormat.OpenXml.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\EPPlus.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\ExcelNumberFormat.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\itextsharp.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.IO.RecyclableMemoryStream.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Npgsql.pdb
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Npgsql.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Threading.Tasks.Extensions.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.ValueTuple.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Newtonsoft.Json.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Net.Http.Formatting.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Helpers.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Http.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Http.WebHost.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Mvc.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Optimization.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Razor.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.WebPages.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.WebPages.Deployment.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.WebPages.Razor.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Antlr3.Runtime.pdb
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\EntityFramework.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\EntityFramework.SqlServer.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\bin\System.Web.Http.Owin.xml
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\obj\Debug\EDF.Web.csproj.AssemblyReference.cache
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\obj\Debug\EDF.Web.csproj.CoreCompileInputs.cache
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\obj\Debug\EDF.Web.csproj.Up2Date
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\obj\Debug\EDF.Web.dll
+D:\EDF_Amit\EDF (2)\EDF\EDF.Web\obj\Debug\EDF.Web.pdb

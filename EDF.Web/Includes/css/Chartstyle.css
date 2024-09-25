@@ -1,0 +1,974 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    font-family: 'Lato', sans-serif; background-color:#F9F9F9; letter-spacing: 0.5px;
+    
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+*{margin:0;padding:0;text-decoration:none}
+a{cursor: pointer;}
+img { max-width: 100%; height: auto; }
+
+  @font-face {
+        font-family: "Lato";
+        src: url('698242188-Lato-Bla.eot');
+        src: url('698242188-Lato-Bla.eot?#iefix') format('embedded-opentype'),
+        url('698242188-Lato-Bla.svg#Lato Black') format('svg'),
+        url('698242188-Lato-Bla.woff') format('woff'),
+        url('698242188-Lato-Bla.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+}
+
+/*Form Css Start*/
+
+button, input, select {  font-family: 'Lato', sans-serif;}
+.wrap{
+    display: grid;
+    grid-template-rows: 0px 1fr 0px;}
+
+
+.backgroundWrap { background: url('../images/wave.png'); background-position:center -52px;
+  background-repeat: no-repeat;background-size: cover; height: auto; margin-bottom: 120px}
+.logoBlk { text-align: center;}
+.brandLogo a img {width: 190px; margin-top:55px;}
+.loginDtl {padding: 30px 47px; margin: 190px auto 50px; box-shadow:0px 5px 16px 0px rgb(218,218,218); border-radius: 10px; text-align: center; width: 80%}
+.loginDtl form input{ padding: 10px 15px; font-family: 'Lato', sans-serif; font-size: 16px;border-color: #E8E8E8; margin-bottom: 0 !important;color: #9D9D9D; border-radius: 7px; letter-spacing: 1px; }
+.loginDtl form input:focus, .loginDtl form select:focus { border-color: #00AC84; box-shadow:0 0 0 0.2rem rgb(0 172 132 / 25%)}
+.loginDtl form .form-group { margin-bottom: 0.7rem !important }
+.loginDtl form .submitBtn { background-color: #00AC84; width: 45%; border-color: #00AC84;font-family: 'Lato', sans-serif; font-size: 20px; padding: 8px 0; color: #fff; margin-top: 12px; border-radius: 5px}
+.custcode { border: 1px solid #D8D8D8; width: 9%; padding: 13px; text-align: center; vertical-align: middle; border-radius: 50%; font-family:Work Sans; font-size: 16px; float: right; background-color: #fff; position:relative;
+  display: inline-block;}
+
+.custcode span.tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #00AC84;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: 'Lato', sans-serif;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.custcode:hover span.tooltiptext {
+  visibility: visible;
+}
+
+.loginDtl h2{font-family: 'Lato', sans-serif;font-size: 28px;color: #00AC84; margin-bottom: 18px}
+/*.loginDtl form span {font-family: 'Lato', sans-serif; font-size: 10px; text-align: left !important; float: left; margin: 7px 0 10px 7px; color:#BBB}
+*/
+.codInput { width: 90%; float: left; }
+
+.loginWrp {text-align: center; }
+
+.signLink, .sigupLink {font-family: 'Lato', sans-serif; font-size: 16px; color: #000 margin-right2px}
+.signLink a, .fpwLink, .sigupLink a { text-align: center; margin-bottom: 50px; text-decoration: none; font-family: 'Lato', sans-serif; font-size: 16px; color: #00AC84}
+.fpwLink { margin-left: 140px; float: left; }
+.signLink a:hover, .fpwLink:hover, .sigupLink a:hover {color: #00AC84}
+.fpwLink:hover { text-decoration: none; }
+
+.loginDtl form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff;
+  background-image: url('../images/arrow.png');
+  background-repeat: no-repeat;
+  background-position-x: 99%;
+  background-position-y: 12px;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  margin-right: 2rem;
+  background-size: 10px !important;
+  border-radius: 6px;
+  padding: 5px 15px;
+  letter-spacing: 1px;
+  font-family: 'Lato', sans-serif; 
+  font-size: 14px; border-color: #E8E8E8; height: 42px !important; color: #9D9D9D;
+}
+
+.loginDtl form select.smallSelect {background-position-x: 97%;}
+
+.loginDtl form input::-webkit-input-placeholder { /* Edge */
+ color: #9D9D9D
+}
+
+.loginDtl form input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #9D9D9D
+}
+
+.loginDtl form input::placeholder {
+  color: #9D9D9D
+}
+
+
+/*profile css start*/
+.topNav{background-color: #fff; position: fixed; top: 0; left: 0; right: 0;z-index: 1; height: 60px;box-shadow:0px 5px 10px 0px rgb(214,214,224);}
+
+.topNavWrap {width: 95%; margin: 0 0 0 4%}
+.topLogo { margin: 15px 0 0 20px }
+.topLogo a { text-decoration: none; margin:5px 10px 0 0; display: block; text-transform: uppercase;color: #00AC84;
+    font-size: 30px;letter-spacing: 1px; margin-top: 12px; }
+
+.searchBar { width: 45%; margin-top: 10px; border-radius: 20px; background-image: url('../images/search.png'); background-repeat: no-repeat; background-position: 98% 10px; background-size: 3%}
+.searchBar:focus{ border-color: #00AC84; box-shadow:0 0 0 0.2rem rgb(0 172 132 / 25%)}
+.notifProfileBlk {width: 50%; float: right;}
+.notification.button {
+  color: red;
+  display: inline-block; 
+  position: relative; 
+  padding: 2px 5px;
+  margin-top: 15px;
+  float: left;
+}
+
+
+.notification .button__badge {
+  background-color: #FF0227;
+  border-radius: 50%;
+  color: white;
+  padding: 2px 4px;
+  font-size: 11px;
+  position: absolute; 
+  top: 0;
+  right: 0;
+  border: 1px solid #fff;
+}
+
+
+.sideNav { background-color: #00AB83; position: fixed;left: 0; top: 0; bottom: 0;z-index: 9999; float: left; width: 4%}
+.sideNav ul { width:100%; text-align: center;}
+.sideLogo{ margin: 5px 0 10px 0; display: inline-block; width: 45px}
+.sideIcon {margin: 18px 10px; display: inline-block; width: 25px}
+/*.sideNav ul li:hover { background-color: #02785C}*/
+.sideNav ul li.slogo:hover { background-color: inherit; }
+
+.dashboardlink { position: relative;
+  display: inline-block;}
+.dashboardlink .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color:#02785C;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  
+}
+
+.dashboardlink:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+.driverlink { position: relative;
+  display: inline-block;}
+.driverlink .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color:#02785C;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  
+  z-index: 1;
+}
+
+.driverlink:hover .tooltiptext {
+  visibility: visible;
+}
+
+.profilelink { position: relative;
+  display: inline-block;}
+.profilelink .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color:#02785C;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+
+  z-index: 1;
+}
+
+.profilelink:hover .tooltiptext {
+  visibility: visible;
+}
+
+.profileDropdown { margin-top: 15px; float: right; }
+.profileDropdown a { text-decoration: none; }
+.profileDropdown .dropdown-menu { padding:0 5px; width: 250px; border-radius: 10px; top: 5px !important}
+.profileDropdown .dropdown-menu li {border-bottom: 1px solid #eee; padding: 10px 0}
+.profileDropdown .dropdown-menu li:last-child { border-bottom: 0; }
+.profileDropdown .dropdown-menu li a {font-family: 'Lato', sans-serif;font-size: 14px; color: #202121;}
+
+.profileInfo { margin-bottom:150px }
+.profileInfo .row { padding: 5px 0; }
+.profileInfo h2 {font-family: 'Lato', sans-serif;font-size: 24px;color: #00AC84;}
+.profileInfo p {font-family: 'Lato', sans-serif; font-size: 18px; text-align: left !important; float: left; margin: 15px 0 15px 7px; color:#676767}
+.btnBlock { text-align: center; margin-bottom: 150px }
+.saveBtn { background-color: #00AC84; width: 45%; border-color: #00AC84;font-family: 'Lato', sans-serif; font-size: 16px; padding: 8px 0; color: #fff; margin-top: 12px; border-radius: 5px}
+.saveBtn:hover { color: #fff }
+
+.emergencyContact input { border-radius: 12px; font-family: 'Lato', sans-serif;}
+.containerWrap {width: 95%; margin: 80px 0 0 75px}
+.deleteInputBtn,.saveInputBtn,.addInputBtn { border:0; background-color: transparent; height: 30px}
+.deleteInputBtn:focus, .saveInputBtn:focus, .addInputBtn:focus{outline: none;}
+.mobileNav{display: none;}
+.deleteInputBtn img { margin-top: 5px }
+
+.drop-profile { background-image: url('../images/drop-profile.png'); background-repeat: no-repeat; background-position: 40px 5px; padding: 6px 0 10px 80px; line-height: 20px; background-size: 18%;}
+.drop-drivers { background-image: url('../images/drop-drivers.png'); background-repeat: no-repeat; background-position: 40px 5px; padding: 6px 0 10px 80px; line-height: 20px;background-size: 18%;}
+.drop-account { background-image: url('../images/drop-profile.png'); background-repeat: no-repeat; background-position: 40px 5px; padding: 6px 0 10px 80px; line-height: 20px; background-size: 14%;}
+.drop-admin { background-image: url('../images/drop-managadmin.png'); background-repeat: no-repeat; background-position: 40px 5px; padding:6px 0 10px 80px; line-height: 20px;background-size: 11%;}
+.drop-privacy { background-image: url('../images/drop-privacy.png'); background-repeat: no-repeat; background-position: 40px 5px; padding:6px 0 10px 80px; line-height: 20px;background-size: 11%;}
+.drop-faq { background-image: url('../images/drop-faq.png'); background-repeat: no-repeat; background-position: 40px 5px; padding: 6px 0 10px 80px; line-height: 20px;background-size: 18%;}
+
+.dropdown.head-dpdn a.dropdown-toggle{ color: #00AB83 }
+
+.dateblk, .monthblk, .yearblk { width: 33%; }
+
+
+/*profile css end*/
+
+/*footer css end*/
+footer { position: fixed; bottom: 0; left: 0; right: 0; width: 100%; display: block; padding:30px 0; box-shadow:0px 1px 10px 0px rgb(232,232,232); text-align: center; background-color: #fff}
+footer p { font-size: 12px; letter-spacing: 1px }
+/*footer css end*/
+
+/*Drivers Page css Start*/
+[data-href] { cursor: pointer; }
+.diversTable .aling  { text-align: center; vertical-align: middle;}
+.diversTable tr th {font-size: 16px; font-weight: bold; padding: 12px 0; border-top: 1px solid #F1F1F1; border-bottom: 1px solid #F1F1F1;}
+.diversTable tr td{ padding: 12px 0;}
+.driverImage { float: left; margin: 0px 0 0 0; width: 40px; vertical-align: middle;}
+.driverDtl { float: left;margin: 7px 0 0 20px; vertical-align: middle;}
+.tripDtl { clear: both; }
+.driverName { font-size: 14px !important; margin:0 !important; margin-top: 5px}
+.driveTrip {font-size: 12px; font-family: 'Lato', sans-serif; }
+.driveDistance {font-size: 12px}
+.tablecontainer { background-color: #fff; box-shadow:0px 1px 10px 0px rgb(232,232,232); border: 1px solid #F1F1F1; margin-bottom: 95px;padding: 0 15px}
+.tablecontainer h3 { margin: 11px 0 7px 35px !important; font-size: 18px; font-family: 'Lato', sans-serif;}
+.editBtn { display: block;}
+.logged-in {color: #00AB83;font-size: 25px}
+.logged-in span { color: #495057; font-size: 15px; margin-left: 5px }
+.logged-out {color: #C7C6C6;font-size: 25px} 
+.logged-out span { color: #495057; font-size: 15px; margin-left: 5px }
+
+.trioBtnWrap { width: 50%; float: right; }
+.timetag { background-color: #00AB83; width: 27%; padding:12px 15px; text-align: center; border-radius: 5px; text-transform: uppercase; border:1px solid #00AB83;  margin:0 0 15px 0; display: block; }
+.timetag input { background-color: #00AB83; width: 100%; color: #fff !important; font-size: 14px; text-transform: uppercase; border:0;  font-family: 'Lato', sans-serif;}
+.timetag input:focus { border:0; outline: 0 }
+
+.AddDriverBtn { background-color: #00AB83; background-image: url('../images/sideIcontwo.png') ; background-repeat: no-repeat; background-size: 12%; background-position: 22px 9px; padding: 12px 0px 12px 20px; margin-right:5px;text-align: center; color: #fff; font-size: 14px; margin-bottom: 10px; border-radius: 5px; text-transform: capitalize; border:0; width: 40%; float: left; }
+.AddDriverBtn:focus { outline: none; }
+.sortBtn, .actionBtn { width: 28%; float: left; margin: 0 2px }
+.sortBtn .dropdown .dropdown-toggle, .actionBtn .dropdown .dropdown-toggle { background-color: #fff; border-color: #ccc; width: 100%;font-size: 14px; font-family: 'Lato', sans-serif; color: #000; padding: 8px 0}
+.sortBtn .dropdown .dropdown-toggle:focus, .actionBtn .dropdown .dropdown-toggle:focus { background-color: #fff; border-color: #ccc; color: #000; outline: 0; border:0; }
+.sortBtn .dropdown .dropdown-toggle:active, .actionBtn .dropdown .dropdown-toggle::active { background-color: #fff; border-color: #ccc; color: #000; }
+.sortBtn .dropdown-item, .actionBtn .dropdown-item  {font-size: 14px; font-family: 'Lato', sans-serif; color: #000; }
+.actionDropdown { padding: 0; border-radius: 15px; width: 80px !important}
+.actionDropdown a { border-bottom: 1px solid #f2f2f2; margin-left: 5px; font-size: 14px; line-height: 12px; padding-bottom: 10px }
+.actionDropdown a span, .actionDropdown a img { margin-right: 5px; }
+
+
+.addDriverModal .modal-content { padding: 30px !important; border-radius: 15px !important}
+.addDriverModal .modal-content.loginDtl { box-shadow: none; margin: 0; width: 100%} 
+.addDriverModal .modal-content.loginDtl form { margin: 20px 0 0 0}
+.addDriverModal .modal-content.loginDtl form .submitBtn { width: 65%; margin-top: 30px }
+.addDriverModal .modal-content .modal-title {font-size: 18px; font-family: 'Lato', sans-serif;}
+
+
+.UpgradeSubModal .modal-content { padding: 30px !important; border-radius: 15px !important}
+.UpgradeSubModal .modal-title { text-transform: uppercase; }
+.UpgradeSubModal .rightBorder { border-right: 1px solid #f1f1f1 }
+.UpgradeSubModal .leftBlkSub  { text-align: left;  }
+.UpgradeSubModal .leftBlkSub h6 {font-size: 16px; padding: 12px 0; margin: 10px 0 10px 0}
+.UpgradeSubModal .numbDriver p, .amtPaid p{ float: left; margin: 10px 0 0 0}
+.UpgradeSubModal .numbDriver span, .amtPaid span{ float: right; margin: 10px 0 0 0}
+.UpgradeSubModal .amtPaid { clear: both; } 
+.UpgradeSubModal .rightBlkSub { padding: 0;}
+.UpgradeSubModal .greenBoxAmt {font-size: 32px; color: #fff; font-family: 'Lato', sans-serif; margin: 0 0 10px 0}
+.UpgradeSubModal .greenBlk span {font-size: 12px; color: #fff; font-family: 'Lato', sans-serif;}
+.UpgradeSubModal .inforText {font-size: 11px; color: #000; font-family: 'Lato', sans-serif; margin-top: 50px; display: block;}
+.UpgradeSubModal form .upgradeBtn { background-color: #00AC84; width: 60%; border-color: #00AC84;font-family: 'Lato', sans-serif; font-size: 16px; padding: 8px 0; color: #fff; margin-top: 30px; border-radius: 5px}
+.UpgradeSubModal .greenBlk { width: 100%; border-radius: 10px;background-color: #00AB83; padding: 15px 0; box-shadow: 0px 5px 10px 0px rgb(214 214 224)}
+
+.qtyAddminus { float: right; margin: 0 0 10px 0 }
+ 
+.quantity {
+ display: inline-block; }
+
+.quantity .input-text.qty {
+ width: 35px;
+ height: 25px;
+ padding: 0 5px;
+ text-align: center;
+ background-color: transparent;
+ border: 1px solid #efefef;
+}
+
+.quantity.buttons_added {
+ text-align: left;
+ position: relative;
+ white-space: nowrap;
+ vertical-align: top; }
+
+.quantity.buttons_added input {
+ display: inline-block;
+ margin: 0;
+ vertical-align: top;
+ box-shadow: none;
+}
+
+.quantity.buttons_added .minus,
+.quantity.buttons_added .plus {
+ padding: 7px 10px 8px;
+ height: 25px;
+ background-color: #ffffff;
+ border: 1px solid #efefef;
+ cursor:pointer;}
+
+.quantity.buttons_added .minus {
+ border-right: 0; }
+
+.quantity.buttons_added .plus {
+ border-left: 0; }
+
+.quantity.buttons_added .minus:hover,
+.quantity.buttons_added .plus:hover {
+ background: #eeeeee; }
+
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ margin: 0; }
+ 
+.quantity.buttons_added .minus:focus,
+.quantity.buttons_added .plus:focus {
+ outline: none; }
+.qtyAddminus { float: right; }
+ 
+ .quantity {
+ display: inline-block; }
+
+.quantity .input-text.qty {
+ width: 30px;
+ height: 25px;
+ padding: 0 5px;
+ text-align: center;
+ background-color: transparent;
+ border: 1px solid #efefef;
+}
+
+.quantity.buttons_added {
+ text-align: left;
+ position: relative;
+ white-space: nowrap;
+ vertical-align: top; }
+
+.quantity.buttons_added input {
+ display: inline-block;
+ margin: 0;
+ vertical-align: top;
+ box-shadow: none;
+}
+
+.quantity.buttons_added .minus,
+.quantity.buttons_added .plus {
+ padding: 3px 10px 8px;
+ height: 25px;
+ background-color: #efefef;
+ border: 1px solid #efefef;
+ cursor:pointer;}
+
+.quantity.buttons_added .minus {
+ border-right: 0; }
+
+.quantity.buttons_added .plus {
+ border-left: 0; }
+
+.quantity.buttons_added .minus:hover,
+.quantity.buttons_added .plus:hover {
+ background: #eeeeee; }
+
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ margin: 0; }
+ 
+.quantity.buttons_added .minus:focus,
+.quantity.buttons_added .plus:focus {
+ outline: none; }
+
+
+.editBlk { position: relative; width: 145px; margin:-15px auto; }
+
+.deleteBtn { margin-top: 10px; display: block; }
+.alpha1, .alpha2 { border:2px solid #fff; padding:5px 8px; border-radius: 50%; color: #fff; font-weight: bold;}
+.alpha1 {background-color: #ccc; position: absolute;left: 44px}
+.alpha2 { background-color: #00AB83; position: absolute;left: 60px}
+.mEditBtn {position: absolute;left:77px}
+/*Drivers Page css End*/
+
+/*Scbscription Page css Start*/
+.subscripHeading { font-size: 26px !important }
+.subWrap { border-top: 1px solid #f1f1f1; width: 100%}
+.subWrap .leftBlkSub, .rightBlkSub { padding: 50px 30px }
+.subWrap .leftBlkSub h5{color: #00AB83; font-size: 18px; margin-bottom: 20px;font-family: 'Lato', sans-serif;}
+.subWrap .iconImg { float: left; width:5%; margin-top: 18px; clear: both;}
+.subWrap .benifitsBlk {float: left;width: 85%;font-size: 14px; color: #fff; font-family: 'Lato', sans-serif; margin: 0 0 10px 0; line-height: 25px}
+.subWrap .greenBlk { border-radius: 10px;background-color: #00AB83; text-align: center; padding: 50px 0; box-shadow:0px 5px 10px 0px rgb(214 214 224);}
+.subWrap .greenBoxAmt {font-size: 50px; color: #fff; font-family: 'Lato', sans-serif; margin: 0 0 10px 0}
+.subWrap .greenBlk span {font-size: 20px; color: #fff; font-family: 'Lato', sans-serif;}
+.subWrap .rightBlkSub .priceBlk h6 { margin: 80px 0 40px 0; color: #676767; font-size: 18px; text-transform: uppercase;border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 15px}
+.pdtlLeft { float: left; }
+.pdtlRight { float: right; }
+.priceDtl {margin-bottom:110px;}
+.priceDtltwo {clear: both; border-top: 1px solid #f1f1f1;
+    padding-top:  15px;}
+.priceDtlthree {clear: both; text-align: center; }
+.buyNowBtn { margin: 150px auto 0;background-color: #00AC84; width: 60%; border-color: #00AC84;font-family: 'Lato', sans-serif; font-size: 16px; padding: 8px 0; color: #fff; border-radius: 15px }
+
+/*Manage Page css Start*/
+.NewAccessBtn { background-color: #00AB83; padding: 10px 15px ; margin:10px 5px;text-align: center; color: #fff !important; font-size: 14px; border-radius: 5px; text-transform: capitalize; border:0; float: right;}
+.NewAccessBtn:focus { outline: none; }
+.margLeft {margin:20px 0 10px 5px !important}
+.tableSearchBar { width: 60%; background-size: 6%; float: left;}
+.shareWithtable thead { background-color: #f1f1f1 }
+.ManageContainer{ background-color: #fff; box-shadow:0px 1px 10px 0px rgb(232,232,232); border: 1px solid #F1F1F1; margin-bottom: 30px; border-radius: 7px; padding: 0 15px}
+.selectpicker .dropdown-item { height: 35px !important }
+.newAccess .loginDtl{ text-align: left !important; box-shadow: none; padding: 20px 0}
+.newAccess .shareAccess { border-bottom: 1px solid #f1f1f1; padding-bottom: 10px;font-size: 18px;
+    font-family: 'Lato', sans-serif; background-image: url('../images/share-access.png'); background-repeat: no-repeat; background-size: 9%; background-position: 30px 0; padding: 6px 0 10px 80px; line-height: 20px}
+
+
+.newAccess .modal-body { padding: 20px }
+.newAccess .modal-body label{font-size: 14px; margin: 15px 0}
+.newAccess .loginDtl span { font-size: 12px }
+.shareBtn { width: 20%; margin-top: 30px; background-color: #00AC84; border-color: #00AC84; font-family: 'Lato', sans-serif; font-size: 16px; padding: 8px 0; color: #fff; margin-top: 12px; border-radius: 5px;float: right !important; margin-right: 18px}
+
+/*Dashboard Page css Start*/
+
+.compareBtn {font-size: 16px; letter-spacing:1px; color: #fff; font-family: 'Lato', sans-serif; background-color: #00AB83; border-radius: 25px; border:0; padding: 12px; width: 95%; text-align: center; margin:0 auto 15px; display: block;}
+
+.dashboard .timetag { width: 60% }
+.locationtag { background-color: #fff; color: #000 !important; border:1px solid #ccc}
+.proformBlk { background-color: #67AD00; height:150px; padding: 15px;color: #fff; font-size: 14px; margin: 20px 0; border-radius: 5px; border:1px solid #67AD00; }
+.scoreBlk { background-color: #00AB83;height:150px;padding: 15px;color: #fff; font-size: 14px; margin: 20px 0; border-radius: 5px;border:1px solid #00AB83;  }
+.proformBlk h3, .scoreBlk h3, .OverviewMap h3{font-size: 20px; color: #fff; font-family: 'Lato', sans-serif; margin-bottom: 10px}
+.dPerformance { margin: 20px 0}
+.dPerformance p {font-size: 16px; color: #fff; font-family: 'Lato', sans-serif; margin-bottom: 10px; letter-spacing: 1px}
+.dPerformance span {font-size: 14px; color: #fff; font-family: 'Lato', sans-serif; text-align: center; width: 48%;
+    margin-left: 0; display: block;}
+.scoreBlk .scorePerform .progress { background-color: transparent; height: 1.5rem; margin-top: 25px}
+.scorePerform { text-align: center; }
+.scorePerform p { font-size: 16px; color: #fff; font-family: 'Lato', sans-serif; margin-top:5px }
+.scorePerform span { font-size: 50px; color: #fff; font-family: 'Lato', sans-serif; font-weight: bold; display: block;}
+.progress label {font-size: 16px; color: #fff; font-family: 'Lato', sans-serif;}
+.progress .progress-bar.bg-success { background-color: #02F072 !important }
+.dBoardContainer {margin-bottom: 100px;}
+.dTable, .chartBlock { background-color: #fff;  padding: 15px;color: #fff; font-size: 14px; margin: 20px 0; border-radius: 5px; border:1px solid #f1f1f1; }
+.dTable h3{font-size: 20px; color: #000; font-family: 'Lato', sans-serif; margin-bottom: 10px}
+.dTable .diversTable tr th, .dTable .diversTable tr td { color: #000 }
+.dTable .diversTable .driverDtl { margin: 0 }
+.canvasjs-chart-credit { display: none; }
+
+.scoredbox { text-align: center; width: 45px}
+.scoredboxTwo { float: right; }
+.scoredbox .scoreNum { background-color: #35B589; color: #fff; padding: 3px 5px; border-radius: 5px; display: block; text-align: center;}
+.scoredbox .scoredTitle {font-size: 10px; color: #000; font-family: 'Lato', sans-serif; text-transform: uppercase;display: block; margin:4px 0;}
+.scoredbox .scoredKms {font-size: 10px; color: #000; font-family: 'Lato', sans-serif; text-transform: uppercase;display: block;}
+.scoreBoard, .campareDriver, .yourScore, .overViewTableBlk, .OverviewMap, .tripsTbl { background-color: #fff;
+    padding: 15px 15px 30px 15px;
+    font-size: 14px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #f1f1f1 }
+.scoreBoard { height: 95% }
+
+.campareDriver, .yourScore {padding: 0 0;}   
+.yourScore  { margin: 20px 0 0 0 }
+
+.scoreShow {background-image: url('../images/scoreboad.png'); background-repeat: no-repeat; background-position: center; height: 270px; position: relative; margin-top: 20px; background-size: 80%}
+.greyCircle {position: absolute; top: 24%; left: 27%; text-align: center; width: 190px; height: 160px;background-size: 100%}
+.greyCircle h5 { font-size: 70px; color: #000; font-family: 'Lato', sans-serif; text-transform: uppercase; font-weight: bold; margin: 60px 0 0 0}
+.greyCircle span {font-size: 14px; color: #000; font-family: 'Lato', sans-serif; text-transform: uppercase;}
+.scoreTym { position: absolute; bottom: -10%; left: 20%}
+.scoreTym sup {font-size: 14px; color: #000; font-family: 'Lato', sans-serif; text-transform: uppercase;}
+.scoreTym span {font-size: 21px; color: #000; font-family: 'Lato', sans-serif; text-transform: uppercase;}
+
+.scoreTable thead tr th { color: #fff; background-color: #00AB83;border-top: none !important;  }
+.scoreTable thead tr td { color: #000 !important }
+.scoreTable .driverCompare .scorePercent { font-size: 25px !important; color: #000; font-family: 'Lato', sans-serif; text-transform: uppercase; font-weight: bold; margin: 30px 10px 0 100px}
+.scoreTable .driverCompare .scoreRemark { font-size: 12px; color: #000; font-family: 'Lato', sans-serif; margin: 30px 0 0 0}
+
+.yourScore thead tr th.headingYourScore { color: #F14950; text-transform: uppercase; padding-left: 15px; font-size: 18px; font-weight: normal;}
+.yourScore thead tr th { padding-left:100px; font-size: 10px; font-family: 'Lato', sans-serif;border-top: none !important;}
+.yourScore thead tr td { color: #000 !important; text-transform: uppercase; padding-left: 15px !important;}
+.yourScore tr td{ border-bottom: 1px solid #F1F1F1; padding: 10px 0 15px 0!important; vertical-align: bottom;}
+.yourScore tr td:first-child { border-bottom: none; }
+.yourScore tr td p { padding-left: 15px !important;  text-transform: uppercase; }
+.scoreCompare { text-align: center; }
+.scoreCompare span{font-size: 10px; color: #019D79; font-family: 'Lato', sans-serif;line-height: 5px; display: block; }
+.scoreCompare .tripSpan{font-size: 10px; color:#F14950; font-family: 'Lato', sans-serif; margin-top: 7px }
+
+#map {
+  height: 300px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+.chartBlock h3{font-size: 18px; color: #F14950; text-transform: uppercase; font-family: 'Lato', sans-serif; margin-bottom: 20px}
+.driverBlock {margin-bottom: 20px; float: left; }
+.overView .sortBtn{ float: right; }
+.overviewHead { border-bottom: 1px solid #f1f1f1 }
+.overviewHead h3,.overviewHead h4, .overViewTableBlk h3, .OverviewScoreBoard h3, .tripsTbl h3, .tripsTbl h4{font-size: 18px; color: #000; font-family: 'Lato', sans-serif; margin-bottom: 10px; border-bottom: 1px solid #f1f1f1; padding-bottom: 10px;}
+.overviewHead h3 {  border-bottom: 0 }
+.overviewHead h4 {border-bottom: 0; float: right;  }
+.tripsTbl h3, .tripsTbl h4 { border-bottom: 0 }
+.tripsTbl { margin-bottom: 150px }
+
+.tripsTbl h3 span {margin-left: 450px }
+.OverviewMap #map {
+  height: 205px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+
+
+.overViewTableBlk { height: 290px }
+.OverviewScoreBoard { height: 297px; }
+.OverviewScoreBoard .scoreShow { background-size:60% ; height: 190px; margin-top: 0}
+.OverviewScoreBoard .greyCircle { left: 28%; top: 5% }
+.OverviewScoreBoard .greyCircle h5 { font-size: 50px; color: #000; font-family: 'Lato', sans-serif; text-transform: uppercase; font-weight: bold; margin: 60px 0 0 0}
+.OverviewScoreBoard  .greyCircle span {font-size: 12px; color: #000; font-family: 'Lato', sans-serif; text-transform: uppercase;}
+.OverviewScoreBoard .scoreTym { width: 250px; }
+.OverviewScoreBoard .leftSide { float: left; }
+.OverviewScoreBoard .rightSide { float: right; }
+
+.tripsTable thead tr th { border-top: 0 }
+.tripsTable tr:hover { background-color: #f2f2f2 }
+
+.proContainer p {font-size: 16px; color: #000; font-family: 'Lato', sans-serif; margin: 20px 0 10px 0}
+.proContainer .carImg { float: left; width: 30px }
+.proContainer span {font-size: 16px; color: #000; font-family: 'Lato', sans-serif; float: right;}
+.proContainer .progress { clear: both; height: 0.5rem }
+.proContainer .progress .progress-bar{ background-color: #00AB83 }
+
+
+
+.fa-calendar {
+    position: absolute;
+    top: 13px;
+    font-size: 20px;
+    color: #1976D2;
+    z-index: 1000
+}
+
+#fa-1 {
+    left: calc(50% - 40px)
+}
+
+#fa-2 {
+    left: calc(100% - 40px)
+}
+
+.datepicker {
+    background-color: #fff;
+    border-radius: 0 !important;
+    align-content: center !important;
+    padding: 0 !important
+}
+
+.datepicker-dropdown {
+    top: 180px !important;
+    left: calc(50% - 173.5px) !important;
+    border-right: #1976D2;
+    border-left: #1976D2
+}
+
+.datepicker-dropdown.datepicker-orient-left:before {
+    left: calc(50% - 6px) !important
+}
+
+.datepicker-dropdown.datepicker-orient-left:after {
+    left: calc(50% - 5px) !important;
+    border-bottom-color: #1976D2
+}
+
+.datepicker-dropdown.datepicker-orient-right:after {
+    border-bottom-color: #1976D2
+}
+
+.datepicker table tr td.today,
+span.focused {
+    border-radius: 50% !important;
+    background-image: linear-gradient(#FFF3E0, #FFE0B2)
+}
+
+
+/*Privacy Policy*/
+.privacyPolicy h5 { color: #00AB83;
+    font-size: 18px;
+    margin-top:  20px;
+    font-family: 'Lato', sans-serif;
+}
+.privacyPolicy h6 {color: #676767;font-size: 15px; font-family: 'Lato', sans-serif; margin: 20px 0 15px 7px;}
+.privacyPolicy p {font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    margin: 20px 0 15px 7px;
+    float: none;
+    color: #676767;}
+.privacyPolicy .guideList li {font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    margin: 10px 0 10px 30px;
+    color: #676767; list-style-type: disc }
+
+.tripMap #map{height: 350px;}
+.viewtrip{font-family: 'Lato', sans-serif;
+    font-size: 16px;color: rgba(0, 0, 0, 0.4); float: right;}
+.viewtrip:hover { text-decoration: none;}    
+.tripLink { margin:0 0 20px 0; display: block; font-family: 'Lato', sans-serif;
+    font-size: 16px; color: #1a73e8}
+    
+
+@media screen and (max-width: 1024px) {
+.containerWrap {margin: 8% 0 0 4%;}
+.timetag { font-size: 11px }
+.dPerformance p, .scorePerform p { font-size: 13px }
+.scorePerform span {font-size: 40px;}
+.trioBtnWrap { width: 85% }
+.driverInfo .timetag { width: 35% }
+.priceDtl .pdtlLeft { width: 70% }
+.notifProfileBlk {width: 70%}
+.sideNav { width: 5% }
+.brandLogo a img { width: 130px;margin-top: 35px;}
+.OverviewScoreBoard .greyCircle {
+    left: 13%;
+    top: 10%;
+}
+.OverviewScoreBoard .greyCircle h5 {font-size: 35px;}
+.OverviewScoreBoard .greyCircle span {
+    font-size: 10px;}
+ .OverviewScoreBoard .scoreTym {
+    width: 163px;bottom: 7%;
+    left: 18%;
+}   
+.dTable h3, .chartBlock h3, .proformBlk h3, .scoreBlk h3, .driverInfo h3, .OverviewMap h3, .overViewTableBlk h3, .OverviewScoreBoard h3, .tripsTbl h3,.overviewHead h4{ font-size: 14px; margin-top: 20px; }
+.OverviewMap #map { height: 192px }
+.sortBtn, .actionBtn { width: 38% }
+
+.dashboard .timetag {
+    width: 90%;
+}
+
+.greyCircle {
+    position: absolute;
+    top: 18%;
+    left: 15%;}
+
+.greyCircle h5 {
+    font-size: 50px;}
+
+.scoreTym {
+    position: absolute;
+    bottom: 7%;
+    left: 9%;
+}
+.scoreTym span {
+    font-size: 17px;}
+
+ .fpwLink { float: none; margin-left:0  }   
+
+}
+
+
+@media screen and (max-width: 992px) {
+.mobileNav{display: block;}
+.navbar-collapse.collapsing .navbar-nav {
+        /*display: block;*/
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -45%;
+        transition: all 0.2s ease;
+        background-color: #00AB83 !important;
+    }
+
+    .navbar-collapse.show .navbar-nav {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        flex-direction: column;
+        height: auto;
+        width: 75%;
+        transition: left 0.35s ease;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); background-color: #fff !important;}
+
+  .fixed-top {background-color: #00AB83 !important;}
+  .navbar-brand { margin-left: 7px; color: #fff !important }
+
+  .MobileNavHeader .navbar-toggler{ float: left; }
+  .MobileNavHeader .navbar-nav .nav-item .nav-link { margin:10px 0 0 10px !important; text-transform: uppercase; color: #fff }
+  .navbar-light .navbar-toggler {  border-color: transparent !important; margin-left: -10px !important; margin-top: 5px !important }
+  .navbar-light .navbar-toggler:focus { outline: none; }
+/*  .NavLink { padding:15px 0 15px 25px !important ; border-bottom:  1px solid #ccc !important }
+*/  
+  .nav-item {border-bottom:  1px solid #ccc !important }
+  .navItem, .nav-logo { border-bottom: 0 !important }
+  .nav-logo { float: none; margin: 0 }
+  .nav-item  img { float: left; margin: 15px 0 10px 20px}
+  .NavLink { float: left; display: block; margin: 10px 0 10px 20px }
+  .nav-logo { padding:0 20px 20px 20px !important; border-bottom:  1px solid #ccc !important }
+  .navbar-nav .close{ margin:10px 10px 0 0; }
+  .collapsible {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  /*background-color: red*/
+}
+.SubMenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  
+ }
+
+.collapsible:after {
+  content: '\002B';
+  color: rgba(0,0,0,.5);
+  font-weight: bold;
+  float: right;
+  margin-right: 15px;
+}
+
+.active:after {
+  content: "\2212";
+}
+.pageHeading { display: none; }
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+.codInput { width: 87%; float: left; }
+.brandLogo a img {width: 80px; margin-top: 20px;}
+/*.header {display: none;}*/
+.sideNav { display: none; }
+.topNav {display: none;}
+.profileInfo h2 {font-family: 'Lato', sans-serif;font-size: 16px;color: #00AC84; margin-bottom: 18px}
+.profileInfo p {font-family: 'Lato', sans-serif; font-size: 14px; text-align: left !important; float: left; margin: 7px 0 10px 7px; color:#676767}
+.dashWrap { margin: 20% 0 0 0 !important; width: 100% }
+.containerWrap { width: 100%; margin: 9% 0 0 0  }
+.containerWrap2 {margin: 20% 0 0 0}
+.dashboard .timetagCol { width: 50%; }
+.dashboard .timetag { width: 115%; font-size: 10px; margin:10px 0 0 0 }
+.proformBlk { text-align: center; height: auto; }
+.dPerformance span { width: 100% }
+.scorePerform { padding-left: 10px !important }
+.scorePerform span { font-size: 40px }
+.dTable h3, .chartBlock h3, .proformBlk h3, .scoreBlk h3, .driverInfo h3, .OverviewMap h3, .overViewTableBlk h3, .OverviewScoreBoard h3, .tripsTbl h3,.overviewHead h4{ font-size: 15px; margin-top: 20px; margin-left: 10px}
+.dPerformance p,.dTable .diversTable tr th, .driverInfo .diversTable tr th, .shareWithtable tr th{ font-size: 14px;padding: 12px}
+.dTable .diversTable tr td, .shareWithtable tr td{ font-size: 14px;}
+.driverDtl {margin: 7px 0 0 14px}
+.trioBtnWrap { width: 100% }
+.driverInfo .timetag { width: 100%; margin: 35px 0 10px 0}
+.AddDriverBtn { background-size: 12% }
+.addDriverModal .modal-content .modal-title { font-size:16px !important  }
+.headingTop { display: none; }
+.ManageContainer .col-md-2 { width: 30% }
+.ManageContainer .col-md-10 { width: 70% }
+.ManageContainer .col-md-3 { width: 30% }
+.ManageContainer .col-md-9 { width: 60% }
+.tableSearchBar {width: 60%; background-size: 9%;}
+.UpgradeSubModal .greenBlk {margin-top: 30px}
+.UpgradeSubModal .rightBorder { border-right: none; }
+.subWrap { border-top: none; }
+.loginDtl { width: 100%; box-shadow: none; margin: 70px auto 50px }
+.loginDtl form select {background-position-x: 97%;} 
+.greyCircle { left: 0;  top: 24%}
+.greyCircle h5 { font-size: 30px !important;}
+.greyCircle span { font-size: 10px}
+.scoreTym span {font-size: 12px}
+.scoreTym sup{font-size: 10px}
+.scoreTym{left:7%; bottom: 10%}
+.scoredbox .scoredTitle,.scoredbox .scoredKms { font-size: 8px; }
+.scoreTable .driverCompare .scorePercent {margin: 29px 10px 0 30px;}
+.yourScore thead tr th.headingYourScore {font-size: 15px; padding-left: 20px}
+.yourScore thead tr th { padding-left: 0 }
+.tripsTbl h3 span { margin-left: 140px }
+.OverviewMap h3 span { margin-left: 0 }
+.driverOverview .col-md-4 { padding-left: 5px; padding-right: 0 }
+
+.overViewTable tr td { font-size: 12px }
+.overViewTableBlk {height: 296px;}
+.OverviewScoreBoard .greyCircle {
+    width: 82px;
+    left: 30%; top: 12%
+}
+.OverviewScoreBoard .greyCircle h5 { font-size: 30px !important; margin: 58px 0 0 0 !important; }
+.OverviewScoreBoard .greyCircle span {font-size: 8px !important;}
+.proContainer p {
+    font-size: 14px;}
+
+.overviewHead .col-md-6 { width: 50% }   
+.headingLink { border-bottom: none !important; }
+.diversTable tr th,.diversTable tr td { padding-left: 5px; padding-right: 5px }
+.sortBtn, .actionBtn { width: 60%;}
+.overviewBlkOne { width: 50%; margin-top: 30px }  
+.overviewBlktwo{ width: 50%; margin-top: 30px } 
+.OverviewScoreBoard .greyCircle { left: 30%; top: 9% }
+.OverviewScoreBoard .greyCircle h5 { font-size: 50px; color: #000; font-family: 'Lato', sans-serif; text-transform: uppercase; font-weight: bold; margin: 60px 0 0 0}
+.OverviewScoreBoard  .greyCircle span {font-size: 12px; color: #000; font-family: 'Lato', sans-serif; text-transform: uppercase;}
+.OverviewScoreBoard .scoreTym { width: 150px; }
+.OverviewScoreBoard .leftSide { float: left; }
+.OverviewScoreBoard .rightSide { float: right; }
+.trioBtnWrap .sortBtn, .actionBtn { width: 27%;}
+.tableSearchBar {width: 58%; background-size: 8%;padding: 7px 2px 6px 2px }
+.OverviewMap #map {height: 180px;}
+.fpwLink { float: none; margin-left:0  }
+}
+
+
+@media screen and (max-width: 600px) {
+.codInput { width: 84%; float: left; }
+.col-sm-2 { width: 40%; padding-left: 0; padding-right: 0 }
+.col-sm-10 { width: 60%; padding-left: 0; padding-right: 0 }
+.col-sm-3 {width: 30%; padding-left: 0; padding-right: 0 }
+.col-sm-1 {width: 10%; padding-left: 0; padding-right: 0 }
+.col-sm-12 { padding-left: 0; padding-right: 0 }
+.emergencyContact input {width: 80%;padding: 1px 5px; font-size: 14px; float: right; margin-top: 10px}
+.saveInputBtn {margin-left:5px;margin-top: 10px}
+.addInputBtn {margin-left:25px}
+.deleteInputBtn{margin-left:5px;margin-top: 10px}
+.driverDtl {margin: 7px 0 0 5px}
+.scoreShow { background-size: 70%}
+.greyCircle { background-size: 100%; left: 28%; }
+.scoreTym {left: 23%; bottom: 5%}
+.yourScore tr td p {padding-left: 25px !important; font-size: 12px}
+.dTable, .chartBlock,.scoreBoard, .campareDriver, .yourScore { padding: 0 }
+.greyCircle h5 { margin-top: 50px }
+.scoreBoard .col-md-2 { width: 10% }
+.scoreBoard .col-md-8 { width: 80% }
+.yourScore tr td { border-bottom: 0 }
+.OverviewScoreBoard .scoreShow {background-size: 40%;}
+.OverviewScoreBoard .greyCircle{ left: 39%;}
+.scoreTym {left: 27%; bottom: -10%;}
+.OverviewScoreBoard .greyCircle {left: 37%;}
+.OverviewScoreBoard .greyCircle {
+    width: 95px;}
+
+
+}
+
+@media screen and (max-width: 400px) {
+.codInput { width: 80%; float: left; }
+.custcode { width: 40px; padding: 11px; }
+.driverDtl {margin: 7px 0 0 5px}
+.scoreShow { background-size: 70%}
+.greyCircle { background-size: 100%; left: 14%; top: 23%}
+.scoreTym {left: 23%; bottom: 5%}
+.yourScore tr td p {padding-left: 25px !important; font-size: 12px}
+.dTable, .chartBlock,.scoreBoard, .campareDriver, .yourScore { padding: 0 }
+.greyCircle h5 { margin-top: 50px }
+.scoreBoard .col-md-2 { width: 10% }
+.scoreBoard .col-md-8 { width: 80% }
+.yourScore tr td { border-bottom: 0 }
+.OverviewScoreBoard .scoreShow {background-size: 40%;}
+.OverviewScoreBoard .greyCircle{ left: 39%;}
+.scoreTym {left: 24%; bottom: 12% }
+.OverviewScoreBoard .greyCircle {left: 37%;}
+.OverviewScoreBoard .greyCircle {width: 95px;}
+.overviewBlkOne { width: 50%; margin-top: 35px }  
+.overviewBlktwo{ width: 50%; margin-top: 35px } 
+.overviewBlktwo .sortBtn { width: 60% }
+.tripsTbl {margin-bottom: 20px;}
+.scoreTable .driverCompare .scorePercent { font-size: 20px !important }
+.editBlk { width: 0 }
+.alpha1{left:-20px}
+.alpha2{left:-12px}
+.mEditBtn {left: 0px; width: 20px}
+.backgroundWrap {background-position:center 0;}
+.backgroundWrapSignup{background-position:center -53px;}
+.alpha1, .alpha2  { padding: 2px 4px }
+.OverviewScoreBoard .scoreTym {width: 194px;}
+.dashboard .timetagCol {width: 100%}
+.dashboard .timetagCol .timetag input {text-align: center;}
+.dashboard .timetag{ margin-top: 60px; margin-left: 0; width: 100% }
+.custcode span.tooltiptext { top: -15px; right: 0 }
+}
